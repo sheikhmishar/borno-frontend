@@ -218,7 +218,8 @@
     </div>
   </section>
 
-  <section class="bg-dark position-relative border-bottom border-dark">
+  <section class="position-relative border-bottom border-dark"
+    style="background-image: url('img/promo-banner-bg.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-size: cover;">
     <div class="container-fluid position-absolute position-fill px-0">
       <div class="row h-100 w-100 mx-0">
         <div class="col-md-6 position-relative">
@@ -242,14 +243,18 @@
     </div>
   </section>
 
-  <section class="bg-dark">
+  <section class="bg-dark border-bottom border-dark"
+    style="background: url('img/pattern-bg.png'); background-size: contain;">
     <div class="container">
       <h6 class="text-center">Testimonials</h6>
       <h2 class="text-center text-primary">Student Community Feedback</h2>
 
       <div class="row my-5">
-        <div class="col-md-6 col-lg-4 my-3">
-          <div class="card bg-secondary shadow h-100">
+        <div class="col-md-6 col-lg-4 my-3 position-relative">
+          <div class="position-absolute" style="left: -65px; bottom: -65px;">
+            <img src="img/testimonial-card-bottom.png" alt="badge" class="img-fluid" style="height: 130px;" />
+          </div>
+          <div class="card bg-secondary shadow h-100 z-index-99">
             <div class="card-body p-5">
               <div class="card-text d-flex">
                 <i class="fa fa-quote-left"></i>
@@ -261,8 +266,8 @@
                 <span class="fa fa-quote-right align-self-end mb-4"></span>
               </div>
               <span class="card-text d-flex">
-                <img src="./img/testimonial_shams.jpg" alt="thumb-test" class="img-fluid rounded-circle fit-cover" height="50px"
-                  width="50px" />
+                <img src="./img/testimonial_shams.jpg" alt="thumb-test" class="img-fluid rounded-circle fit-cover"
+                  height="50px" width="50px" />
                 <div class="d-inline-flex flex-column justify-content-center ml-2">
                   <h5 class="m-0 text-primary">Shams Arefin</h5>
                   <p class="font-weight-light m-0">Marketing Manager</p>
@@ -284,8 +289,8 @@
                 <span class="fa fa-quote-right align-self-end mb-4"></span>
               </div>
               <span class="card-text d-flex">
-                <img src="./img/testimonial_shams.jpg" alt="thumb-test" class="img-fluid rounded-circle fit-cover" height="50px"
-                  width="50px" />
+                <img src="./img/testimonial_shams.jpg" alt="thumb-test" class="img-fluid rounded-circle fit-cover"
+                  height="50px" width="50px" />
                 <div class="d-inline-flex flex-column justify-content-center ml-2">
                   <h5 class="m-0 text-primary">Shams Arefin</h5>
                   <p class="font-weight-light m-0">Marketing Manager</p>
@@ -296,7 +301,10 @@
         </div>
         <div class="col-md-6 col-lg-4 my-3">
           <div class="card bg-secondary shadow h-100">
-            <div class="card-body p-5">
+            <div class="card-body p-5 position-relative">
+              <div class="position-absolute" style="top: -80px; right: -80px;">
+                <img src="img/testimonial-card-badge.png" alt="badge" class="img-fluid" style="height: 160px;">
+              </div>
               <div class="card-text d-flex">
                 <i class="fa fa-quote-left"></i>
                 <p class="text-justify mx-2">
@@ -307,8 +315,8 @@
                 <span class="fa fa-quote-right align-self-end mb-4"></span>
               </div>
               <span class="card-text d-flex">
-                <img src="./img/testimonial_shams.jpg" alt="thumb-test" class="img-fluid rounded-circle fit-cover" height="50px"
-                  width="50px" />
+                <img src="./img/testimonial_shams.jpg" alt="thumb-test" class="img-fluid rounded-circle fit-cover"
+                  height="50px" width="50px" />
                 <div class="d-inline-flex flex-column justify-content-center ml-2">
                   <h5 class="m-0 text-primary">Shams Arefin</h5>
                   <p class="font-weight-light m-0">Marketing Manager</p>
@@ -319,12 +327,14 @@
         </div>
       </div>
     </div>
-  </section>
 
-  <section>
-    <div class="container">
+    <div class="container mt-5 pt-5">
       <h6 class="text-center">Meet Our Instructors</h6>
-      <h2 class="text-center text-primary">The experts behind the courses</h2>
+      <h2 class="text-center text-primary pb-2">
+        <img src="img/arrow-icon.png" alt="" class="d-none d-lg-inline img-fluid mt-n5 position-relative" style="height: 90px; bottom: -60px; -webkit-transform: scaleX(-1); transform: scaleX(-1);" />
+        The experts behind the courses
+        <img src="img/arrow-icon.png" alt="" class="d-none d-lg-inline img-fluid mt-n5 position-relative" style="height: 90px; bottom: -60px;" />
+      </h2>
 
       <div class="row my-5">
         <div class="col-md-2 my-3"></div>
@@ -435,7 +445,7 @@
     <footer class="container">
       <div class="row">
         <div class="col-md-5">
-          <img src="img/logo.png" alt="borno" class="img-fluid mb-3" height="35rem" width="35rem" />
+          <img src="img/logo.png" alt="borno" class="img-fluid mb-3" style="height: 5rem;" />
           <ul class="list-unstyled">
             <li><i class="fa fa-phone text-primary"></i> <a href="tel:+8801XXXXXX" class="text-light">+8801XXXXXX</a>
             </li>
