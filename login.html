@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <!--    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"-->
+  <!--          integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"-->
+  <!--          crossorigin="anonymous">-->
+  <!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"-->
+  <!--          integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"-->
+  <!--          crossorigin="anonymous">-->
+
+  <link rel="shortcut icon" href="img/favicon.png" type="image/png" />
+  <link rel="stylesheet" href="css/fontawesome.all.css" />
+  <link rel="stylesheet" href="css/bootstrap.css" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <title>Borno - Login</title>
+</head>
+
+<body class="bg-secondary text-light">
+  <noscript>You need to enable JavaScript to run this site.</noscript>
+  <div id="preloader" class="vw-100 z-index-99 position-fixed bg-white">
+    <div id="preloader-img" class="d-flex vh-100">
+      <img src="img/preloader.gif" alt="preloader-img" class="img-fluid m-auto" />
+    </div>
+  </div>
+  <navbar class="navbar navbar-expand-md navbar-dark bg-secondary fixed-top py-3 border-bottom border-dark shadow">
+    <div class="container">
+      <a href="index.html" class="navbar-brand">
+        <img src="img/logo.png" alt="borno" class="img-fluid" height="35rem" width="35rem" />
+        |
+      </a>
+
+      <button class="navbar-toggler border-0 text-white" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item">
+            <a href="courses.html" class="nav-link">Courses</a>
+          </li>
+          <li class="nav-item">
+            <div class="input-group">
+              <input type="text" class="form-control bg-dark text-light rounded-pill unset-font"
+                style="border-top-right-radius: 0 !important; border-bottom-right-radius: 0 !important;"
+                placeholder="Search For Courses" />
+              <button class="btn btn-dark bg-dark rounded-pill text-light input-group-append"
+                style="border-top-left-radius: 0 !important; border-bottom-left-radius: 0 !important;">
+                <i class="fa fa-search my-auto"></i>
+              </button>
+            </div>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto my-3 my-md-0">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="instructor.html" class="nav-link">Instructor</a>
+          </li>
+          <li class="nav-item">
+            <a href="blog.html" class="nav-link">Blog</a>
+          </li>
+        </ul>
+        <a href="login.html" role="button" class="btn btn-primary bg-primary-dark border-0 rounded-pill shadow">
+          Login
+        </a>
+      </div>
+    </div>
+  </navbar>
+
+  <div class="pb-5 mb-4 bg-primary">
+  </div>
+
+  <section class="bg-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <div class="card p-5 bg-secondary">
+            <div class="card-body">
+              <div class="card-title text-center text-primary mb-5">
+                <h2><strong>Login</strong></h2>
+              </div>
+              <form action=".." method="post">
+                <div class="input-group my-3">
+                  <button class="btn btn-dark d-flex align-items-center input-group-prepend"
+                    style="border-bottom: 1px solid #777 !important;">
+                    <i class="fa fa-user-circle text-primary"></i>
+                  </button>
+                  <input type="email" class="form-control bg-dark text-light border-secondary border-bottom"
+                    name="email" minlength="6" placeholder="Email" />
+                </div>
+                <div class="input-group mb-3">
+                  <button class="btn btn-dark d-flex align-items-center input-group-prepend"
+                    style="border-bottom: 1px solid #777 !important;">
+                    <i class="fa fa-lock text-primary"></i>
+                  </button>
+                  <input type="password" class="form-control bg-dark text-light border-secondary border-bottom"
+                    name="name" minlength="5" placeholder="Password" />
+                </div>
+                <div class="input-group mb-5">
+                  <button class="btn btn-dark d-flex align-items-center input-group-prepend"
+                    style="border-bottom: 1px solid #777 !important;">
+                    <i class="fa fa-lock text-primary"></i>
+                  </button>
+                  <input type="password" class="form-control bg-dark text-light border-secondary border-bottom"
+                    name="name" minlength="5" placeholder="Repeat Password" />
+                </div>
+                <div class="text-center">
+                  <p class="font-weight-lighter text-white-50">Don't have an account? <a href="register.html" class="text-white">Register</a></p>
+                  <button type="submit" class="btn btn-primary shadow text-secondary rounded-pill">
+                    Sign In <i class="fa fa-arrow-right"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mx-auto text-center">
+          <h2 class="bg-secondary">
+            <strong>Want Us to Email You</strong>
+          </h2>
+          <h2 class="text-primary">
+            <strong>Special Offers & Updates?</strong>
+          </h2>
+          <br />
+          <div class="input-group">
+            <input type="text" class="form-control bg-light font-weight-lighter border-light rounded-pill"
+              placeholder="Email"
+              style="border-top-right-radius: 0 !important; border-bottom-right-radius: 0 !important;" />
+            <button class="btn btn-primary rounded-pill shadow input-group-append text-secondary align-items-center"
+              style="border-top-left-radius: 0 !important; border-bottom-left-radius: 0 !important;">
+              Subscribe&nbsp;<i class="fa fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-dark">
+    <footer class="container">
+      <div class="row">
+        <div class="col-md-5">
+          <img src="img/logo.png" alt="borno" class="img-fluid mb-3" height="35rem" width="35rem" />
+          <ul class="list-unstyled">
+            <li>
+              <i class="fa fa-phone text-primary"></i>
+              <a href="tel:+8801XXXXXX" class="text-light">+8801XXXXXX</a>
+            </li>
+            <li>
+              <i class="fa fa-envelope text-primary"></i>
+              <a href="mailto:info@learnborno.com" class="text-light">info@learnborno.com</a>
+            </li>
+            <li>
+              <i class="fab fa-internet-explorer text-primary"></i>
+              <a href="https://www.learnborno.com" class="text-light">www.learnborno.com</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h5><strong>Navigate</strong></h5>
+          <ul class="list-unstyled mt-4">
+            <li><a href="#" class="text-light">About</a></li>
+            <li><a href="#" class="text-light">Instructors</a></li>
+            <li><a href="#" class="text-light">Partnerships</a></li>
+            <li><a href="#" class="text-light">Blog</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5><strong>Popular Courses</strong></h5>
+          <ul class="list-unstyled mt-4">
+            <li>
+              <a href="#" class="text-light">English Expression Course</a>
+            </li>
+            <li><a href="#" class="text-light">Explore Courses</a></li>
+            <li><a href="#" class="text-light">Student Login</a></li>
+            <li><a href="#" class="text-light">Teacher Login</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h5><strong>Company</strong></h5>
+          <ul class="list-unstyled mt-4">
+            <li><a href="#" class="text-light">Privacy Policy</a></li>
+            <li><a href="#" class="text-light">Terms of Use</a></li>
+            <li><a href="#" class="text-light">Refund Policy</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </section>
+
+  <script src="js/jquery-3.3.1.js"></script>
+  <script src="js/bootstrap.bundle.js"></script>
+  <script src="js/script.js"></script>
+  <!--<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="-->
+  <!--        crossorigin="anonymous"></script>-->
+  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"-->
+  <!--        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"-->
+  <!--        crossorigin="anonymous"></script>-->
+  <!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"-->
+  <!--        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"-->
+  <!--        crossorigin="anonymous"></script>-->
+</body>
+
+</html>

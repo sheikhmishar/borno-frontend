@@ -1,0 +1,220 @@
+:root {
+  --color-primary: #fcc93a;
+  --color-primary-dark: rgb(158, 126, 40);
+  --color-bg: #3d3d3d;
+  --color-bg-dark: #1c1c1c;
+  --color-text-secondary: #222;
+}
+
+@font-face {
+  font-family: "montserrat";
+  src: local("montserrat"), url("../webfonts/Montserrat-Black.ttf");
+  font-weight: bolder;
+}
+@font-face {
+  font-family: "montserrat";
+  src: local("montserrat"), url("../webfonts/Montserrat-BlackItalic.ttf");
+  font-weight: bolder;
+  font-style: italic;
+}
+@font-face {
+  font-family: "montserrat";
+  src: local("montserrat"), url("../webfonts/Montserrat-Bold.ttf");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "montserrat";
+  src: local("montserrat"), url("../webfonts/Montserrat-BoldItalic.ttf");
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: "montserrat";
+  src: local("montserrat"), url("../webfonts/Montserrat-Light.ttf");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "montserrat";
+  src: local("montserrat"), url("../webfonts/Montserrat-Medium.ttf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "montserrat";
+  src: local("montserrat"), url("../webfonts/Montserrat-MediumItalic.ttf");
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: "montserrat";
+  src: local("montserrat"), url("../webfonts/Montserrat-Regular.ttf");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "montserrat";
+  src: local("montserrat"), url("../webfonts/Montserrat-Thin.ttf");
+  font-weight: lighter;
+}
+@font-face {
+  font-family: "montserrat";
+  src: local("montserrat"), url("../webfonts/Montserrat-ThinItalic.ttf");
+  font-style: italic;
+  font-weight: lighter;
+}
+
+body {
+  font-family: "montserrat", sans-serif;
+  font-weight: 450;
+  font-size: small;
+}
+
+::-moz-selection {
+  background-color: var(--color-primary);
+}
+
+::selection {
+  background-color: var(--color-primary);
+}
+
+section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.z-index-99 {
+  z-index: 99 !important;
+}
+
+.position-fill {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.position-bcenter {
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.overlay-dark {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.fit-cover {
+  object-fit: cover;
+  -o-object-fit: cover;
+}
+
+.font-size-unset {
+  font-size: unset;
+}
+
+.btn {
+  font-weight: 500;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn-dark {
+  background-color: var(--color-bg-dark);
+  border-color: var(--color-bg-dark);
+}
+
+.btn:focus {
+  outline: 5px auto var(--color-primary);
+}
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
+  background-color: var(--color-primary-dark) !important;
+  border-color: var(--color-primary-dark) !important;
+}
+
+.btn-primary:focus,
+.btn-primary:not(:disabled):not(.disabled).active:focus,
+.btn-primary:not(:disabled):not(.disabled):active:focus,
+.show > .btn-primary.dropdown-toggle:focus,
+.btn-outline-primary:focus,
+.btn-outline-primary:not(:disabled):not(.disabled).active:focus,
+.btn-outline-primary:not(:disabled):not(.disabled):active:focus,
+.show > .btn-outline-primary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(255, 208, 0, 0.5);
+}
+
+.btn-outline-primary {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:active {
+  color: var(--color-text-secondary) !important;
+  background-color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+}
+
+.text-primary,
+.active > .nav-link,
+.navbar-nav .nav-link.active {
+  color: var(--color-primary) !important;
+}
+
+.text-secondary {
+  color: var(--color-text-secondary) !important;
+}
+
+.banner-img {
+  height: calc(100vh - 3rem);
+}
+
+.bg-primary {
+  background-color: var(--color-primary) !important;
+}
+
+.bg-primary-dark {
+  background-color: var(--color-primary-dark) !important;
+}
+
+.bg-secondary {
+  background-color: var(--color-bg) !important;
+}
+
+.bg-dark {
+  background-color: var(--color-bg-dark) !important;
+}
+
+a.text-primary:hover,
+a.text-primary:focus,
+a.text-primary:active {
+  color: var(--color-primary-dark) !important;
+}
+
+.form-control {
+  border: 0;
+  outline: 0;
+}
+
+.unset-font {
+  font-size: unset;
+  font-weight: unset;
+  line-height: unset;
+}
+
+.form-control:focus {
+  background-color: unset;
+  border: 1px solid var(--color-primary);
+  box-shadow: 0 0 0 0.1rem var(--color-primary);
+}
+
+*.border-primary {
+  border-color: var(--color-primary) !important;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: ">";
+}
