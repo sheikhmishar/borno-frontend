@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<link rel="shortcut icon" href="/assets/img/favicon.png" type="image/png" />
+	<link rel="stylesheet" href="/assets/css/fontawesome.all.css" />
+	<link rel="stylesheet" href="/assets/css/bootstrap.css" />
+	<link rel="stylesheet" href="/assets/css/style.css" />
+	<link rel="stylesheet" href="/assets/css/calendar.css" />
+	<title>Borno - Dashboard</title>
+</head>
+
+<body class="bg-secondary text-light">
+	<noscript>You need to enable JavaScript to run this site.</noscript>
+	<div id="preloader" class="vw-100 z-index-99 position-fixed bg-white">
+		<div id="preloader-img" class="d-flex vh-100">
+			<img src="/assets/img/preloader.gif" alt="preloader-img" class="img-fluid m-auto" />
+		</div>
+	</div>
+	<navbar class="navbar navbar-expand-md navbar-dark bg-secondary fixed-top py-3 border-bottom border-dark shadow">
+		<div class="container">
+			<a href="/" class="navbar-brand mr-2">
+				<img src="/assets/img/logo.png" alt="borno" class="img-fluid position-relative" height="35rem"
+					width="35rem" style="top: -5px;" />
+				<span class="ml-1 text-muted">|</span>
+			</a>
+
+			<button class="navbar-toggler border-0 text-white" data-toggle="collapse" data-target="#navbarCollapse">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarCollapse">
+				<ul class="navbar-nav align-items-center">
+					<li class="nav-item active">
+						<a href="/dashboard/student" class="nav-link">Dashboard</a>
+					</li>
+					<li class="nav-item">
+						<div class="input-group">
+							<input type="text" class="form-control bg-dark text-light rounded-pill unset-font"
+								style="border-top-right-radius: 0 !important; border-bottom-right-radius: 0 !important;"
+								placeholder="Search For Courses" />
+							<button class="btn btn-dark bg-dark rounded-pill text-light input-group-append"
+								style="border-top-left-radius: 0 !important; border-bottom-left-radius: 0 !important;">
+								<i class="fa fa-search my-auto"></i>
+							</button>
+						</div>
+					</li>
+				</ul>
+				<ul class="navbar-nav ml-auto my-3 my-md-0">
+					<li class="nav-item">
+						<a href="/about.html" class="nav-link">About</a>
+					</li>
+					<li class="nav-item">
+						<a href="/instructor.html" class="nav-link">Instructor</a>
+					</li>
+					<li class="nav-item">
+						<a href="/blogs/" class="nav-link">Blog</a>
+					</li>
+				</ul>
+				<a href="/login.html" role="button"
+					class="btn btn-primary rounded-pill shadow text-secondary font-size-unset">
+					Login
+				</a>
+			</div>
+		</div>
+	</navbar>
+
+
+	<section class="bg-secondary mt-4 pb-4">
+		<div class="container">
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb font-weight-bold bg-secondary h5">
+					<li class="breadcrumb-item"><a class="text-primary" href="index.html">Home</a></li>
+					<li class="breadcrumb-item" aria-current="page"><a class="text-primary" href="./">Dashboard</a></li>
+					<li class="breadcrumb-item active text-reset" aria-current="page">Student</li>
+				</ol>
+			</nav>
+		</div>
+	</section>
+
+	<section class="bg-dark border-bottom border-dark">
+		<div class="container">
+			<h6 class="text-center">Calender</h6>
+			<h2 class="text-center text-primary">Upcoming Classes & Assignments</h2>
+
+			<div class="row my-5">
+				<div class="bg-dark col-md-4 my-3 position-relative">
+					<h5 class="text-center">
+						Today's Tasks
+					</h5>
+					<br />
+					<div class="card bg-secondary shadow" style="border-radius: 30px;">
+						<div class="card-body p-3">
+							<div class="card-text d-flex justify-content-between">
+								<div>
+									<h5>Course Name</h5>Teacher's Name
+								</div>
+								<div>
+									<h5>2:20 PM</h5>
+								</div>
+							</div>
+						</div>
+					</div><br>
+					<div class="card bg-secondary shadow" style="border-radius: 30px;">
+						<div class="card-body p-3">
+							<div class="card-text d-flex justify-content-between">
+								<div>
+									<h5>Course Name</h5>Teacher's Name
+								</div>
+								<div>
+									<h5>4:20 PM</h5>
+								</div>
+							</div>
+						</div>
+					</div><br>
+					<div class="card bg-secondary shadow" style="border-radius: 30px;">
+						<div class="card-body p-3">
+							<div class="card-text d-flex justify-content-between">
+								<div>
+									<h5>Assignment Name</h5>Teacher's Name
+								</div>
+								<div>
+									<h5>6:20 PM</h5>
+								</div>
+							</div>
+						</div>
+					</div><br>
+					<h6 class="text-center"><a href="#" style="text-decoration: none; color: #fcc93a;">+ Add Task</a>
+					</h6>
+				</div>
+				<div class="col-md-8 my-5">
+					<div class="calendar">
+						<div class="calendar-header">
+							<span class="month-picker" id="month-picker"></span>
+							<div class="year-picker">
+								<span class="year-change" id="prev-year">
+									<pre style="color: white;"><</pre>
+								</span>
+								<span id="year"></span>
+								<span class="year-change" id="next-year">
+									<pre style="color: white;">></pre>
+								</span>
+							</div>
+						</div>
+						<div class="calendar-body">
+							<div class="calendar-week-day">
+								<div>Sun</div>
+								<div>Mon</div>
+								<div>Tue</div>
+								<div>Wed</div>
+								<div>Thu</div>
+								<div>Fri</div>
+								<div>Sat</div>
+							</div>
+							<div class="calendar-days"></div>
+						</div>
+						<div class="month-list"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="bg-secondary border-bottom border-dark">
+		<div class="container">
+			<h2 class="text-center text-primary">My Courses</h2>
+			<div class="row my-5" style="padding: 10px;">
+				<div class="bg-dark col-md-5 col-lg-5 my-5 position-relative"
+					style="border-radius: 30px; margin: 15px;">
+					<img src="/assets/img/banner_about_us.jpg" class="img-fluid" alt="Responsive image"
+						style="border-radius: 15px; margin-top: 15px; margin-bottom: 30px;">
+					<h2 class="text-reset">Strategic Social Media and Evolution of Visual</h2>
+					<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia nam impedit expedita error
+						ratione obcaecati nesciunt, sapiente eum pariatur itaque non sed harum!</p>
+					<a href="#" role="button" class="btn btn-primary rounded-pill shadow text-secondary font-size-unset"
+						style="margin-bottom: 15px;">
+						Continue
+					</a><br>
+				</div>
+				<div class="col-md-1 col-lg-1 my-1">
+				</div>
+				<div class="bg-dark col-md-5 col-lg-5 my-5 position-relative" style="border-radius: 30px; margin:15px;">
+					<img src="/assets/img/banner_about_us.jpg" class="img-fluid" alt="Responsive image"
+						style="border-radius: 15px; margin-top: 15px; margin-bottom: 30px;">
+					<h2 class="text-reset">Strategic Social Media and Evolution of Visual</h2>
+					<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia nam impedit expedita error
+						ratione obcaecati nesciunt, sapiente eum pariatur itaque non sed harum!</p>
+					<a href="#" role="button" class="btn btn-primary rounded-pill shadow text-secondary font-size-unset"
+						style="margin-bottom: 15px;">
+						Continue
+					</a><br>
+				</div>
+			</div>
+			<div class="row my-5" style="padding-left: 15px; padding-right: 40px;">
+				<div class="bg-dark col-md-12 col-lg-12 my-12 position-relative"
+					style="border-radius: 30px; padding: 20px;">
+					<h2 class="text-primary">RECENT POSTS</h2>
+					<div class="text-primary">____________________________________________</div>
+					<br>
+					<div style="padding-left: 20px;">
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<section style="background-color: rgb(49, 46, 46);">
+		<footer class="container">
+			<div class="row">
+				<div class="col-md-5">
+					<img src="/assets/img/logo.png" alt="borno" class="img-fluid mb-3" style="height: 5rem;" />
+					<ul class="list-unstyled">
+						<li><i class="fa fa-phone text-primary"></i> <a href="tel:+8801XXXXXX"
+								class="text-light">+8801XXXXXX</a>
+						</li>
+						<li><i class="fa fa-envelope text-primary"></i> <a href="mailto:info@learnborno.com"
+								class="text-light">info@learnborno.com</a></li>
+						<li><i class="fab fa-internet-explorer text-primary"></i> <a href="https://www.learnborno.com"
+								class="text-light">www.learnborno.com</a></li>
+					</ul>
+				</div>
+				<div class="col-md-2">
+					<h5><strong>Navigate</strong></h5>
+					<ul class="list-unstyled mt-4">
+						<li><a href="#" class="text-light">About</a></li>
+						<li><a href="#" class="text-light">Instructors</a></li>
+						<li><a href="#" class="text-light">Partnerships</a></li>
+						<li><a href="#" class="text-light">Blog</a></li>
+					</ul>
+				</div>
+				<div class="col-md-3">
+					<h5><strong>Popular Courses</strong></h5>
+					<ul class="list-unstyled mt-4">
+						<li><a href="#" class="text-light">English Expression Course</a></li>
+						<li><a href="#" class="text-light">Explore Courses</a></li>
+						<li><a href="#" class="text-light">Student Login</a></li>
+						<li><a href="#" class="text-light">Teacher Login</a></li>
+					</ul>
+				</div>
+				<div class="col-md-2">
+					<h5><strong>Company</strong></h5>
+					<ul class="list-unstyled mt-4">
+						<li><a href="#" class="text-light">Privacy Policy</a></li>
+						<li><a href="#" class="text-light">Terms of Use</a></li>
+						<li><a href="#" class="text-light">Refund Policy</a></li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+	</section>
+
+
+	<script src="/assets/js/jquery-3.3.1.js"></script>
+	<script src="/assets/js/bootstrap.bundle.js"></script>
+	<script defer src="/assets/js/calendar.js"></script>
+</body>
+
+</html>
