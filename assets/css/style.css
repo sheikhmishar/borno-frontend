@@ -248,6 +248,7 @@ a.text-primary:active {
   background-color: var(--color-bg-dark) !important;
 }
 
-tr {
-  margin: 5px;
+.dropdown-menu {
+  right: 0;
+  left: unset;
 }
