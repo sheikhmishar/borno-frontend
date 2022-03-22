@@ -7,10 +7,10 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
 
-  <link rel="shortcut icon" href="/assets/img/favicon.png" type="image/png" />
-  <link rel="stylesheet" href="/assets/css/fontawesome.all.css" />
-  <link rel="stylesheet" href="/assets/css/bootstrap.css" />
-  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="shortcut icon" href="../assets/img/favicon.png" type="image/png" />
+  <link rel="stylesheet" href="../assets/css/fontawesome.all.css" />
+  <link rel="stylesheet" href="../assets/css/bootstrap.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
 
   <title>Borno - Instructor Dashboard</title>
 </head>
@@ -24,10 +24,11 @@
       </div>
     </div>
   </div>
-  <navbar class="navbar navbar-expand-md navbar-dark bg-secondary fixed-top py-3 border-bottom border-dark shadow">
+  <navbar class="navbar navbar-expand-md navbar-dark bg-secondary fixed-top border-bottom border-dark shadow">
     <div class="container">
-      <a href="/" class="navbar-brand mr-2">
-        <img src="/assets/img/logo.png" alt="borno" class="img-fluid position-relative" style="top: -5px; width: 3rem;" />
+      <a href="../" class="navbar-brand mr-2">
+        <img src="../assets/img/logo.png" alt="borno" class="img-fluid position-relative"
+          style="top: -5px; width: 3rem;" />
         <span class="ml-1 text-muted">|</span>
       </a>
 
@@ -43,10 +44,10 @@
             </a>
             <ul class="dropdown-menu bg-secondary border-dark shadow font-size-unset">
               <li>
-                <a href="/dashboard/student.html" class="nav-link">Student</a>
+                <a href="student.html" class="nav-link">Student</a>
               </li>
               <li>
-                <a href="/dashboard/instructor.html" class="nav-link active">Instructor</a>
+                <a href="instructor.html" class="nav-link active">Instructor</a>
               </li>
             </ul>
           </li>
@@ -62,20 +63,34 @@
             </div>
           </li>
         </ul>
-        <ul class="navbar-nav ml-auto my-3 my-md-0">
+        <ul class="navbar-nav ml-md-auto my-3 my-md-0 align-items-md-center">
           <li class="nav-item">
-            <a href="/about.html" class="nav-link">About</a>
+            <a href="../about.html" class="nav-link">About</a>
           </li>
           <li class="nav-item">
-            <a href="/instructor.html" class="nav-link">Instructor</a>
+            <a href="../instructor.html" class="nav-link">Instructor</a>
           </li>
           <li class="nav-item">
-            <a href="/blogs/" class="nav-link">Blog</a>
+            <a href="../blogs/" class="nav-link">Blog</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+              <img src="../assets/img/testimonial_shams.jpg" alt="thumb-test" class="img-fluid rounded-circle fit-cover"
+                height="45px" width="45px" />
+            </a>
+            <ul class="dropdown-menu bg-secondary border-dark shadow font-size-unset">
+              <li>
+                <a href="../register.html" class="nav-link">Profile Edit</a>
+              </li>
+              <li>
+                <a href="#" class="nav-link">Invoices</a>
+              </li>
+              <li>
+                <a href="../login.html" class="nav-link">Logout</a>
+              </li>
+            </ul>
           </li>
         </ul>
-        <a href="/login.html" role="button" class="btn btn-primary rounded-pill shadow text-secondary font-size-unset">
-          Login
-        </a>
       </div>
     </div>
   </navbar>
@@ -84,7 +99,7 @@
     <div class="container">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb font-weight-bold bg-dark h5">
-          <li class="breadcrumb-item"><a class="text-primary" href="/">Home</a></li>
+          <li class="breadcrumb-item"><a class="text-primary" href="../">Home</a></li>
           <li class="breadcrumb-item" aria-current="page">Instructor Dashboard</li>
         </ol>
       </nav>
@@ -161,7 +176,8 @@
             <div class="tab-pane fade" id="t-class" role="tabpanel">
               <h3 class="text-primary mb-4">Edit Class</h3>
 
-              <table class="table table-dark shadow table-borderless table-hover table-responsive-md table-striped rounded">
+              <table
+                class="table table-dark shadow table-borderless table-hover table-responsive-md table-striped rounded">
                 <thead>
                   <tr>
                     <th class="border-right border-dark" scope="col">#</th>
@@ -224,7 +240,8 @@
             <div class="tab-pane fade" id="t-assignment" role="tabpanel">
               <h3 class="text-primary mb-4">Assignment</h3>
 
-              <table class="table table-dark shadow table-borderless table-hover table-responsive-lg table-striped rounded">
+              <table
+                class="table table-dark shadow table-borderless table-hover table-responsive-lg table-striped rounded">
                 <thead>
                   <tr>
                     <th class="border-right border-dark" scope="col">#</th>
@@ -283,7 +300,8 @@
             <div class="tab-pane fade" id="t-feedback" role="tabpanel">
               <h3 class="text-primary mb-4">Feedback</h3>
 
-              <table class="table table-dark shadow table-borderless table-hover table-responsive-md table-striped rounded">
+              <table
+                class="table table-dark shadow table-borderless table-hover table-responsive-md table-striped rounded">
                 <thead>
                   <tr>
                     <th class="border-right border-dark" scope="col">#</th>
@@ -340,7 +358,7 @@
               <div class="card bg-dark shadow">
                 <div class="card-body">
                   <span class="card-title d-flex">
-                    <img src="/assets/img/testimonial_shams.jpg" alt="thumb-test"
+                    <img src="../assets/img/testimonial_shams.jpg" alt="thumb-test"
                       class="img-fluid rounded-circle fit-cover" height="50px" width="50px" />
                     <div class="d-inline-flex flex-column justify-content-end ml-3">
                       <h5 class="m-0 text-primary">Shams Arefin</h5>
@@ -355,7 +373,7 @@
                     <div class="card bg-dark border-dark my-3">
                       <div class="card-body">
                         <span class="card-title d-flex">
-                          <img src="/assets/img/testimonial_shams.jpg" alt="thumb-test"
+                          <img src="../assets/img/testimonial_shams.jpg" alt="thumb-test"
                             class="img-fluid rounded-circle fit-cover" height="50px" width="50px" />
                           <div class="d-inline-flex flex-column justify-content-start ml-3">
                             <h5 class="m-0 text-primary">Shams Arefin</h5>
@@ -391,7 +409,8 @@
             <div class="tab-pane fade" id="t-evaluation" role="tabpanel">
               <h3 class="text-primary mb-4">Evaluation</h3>
 
-              <table class="table table-dark shadow table-borderless table-hover table-responsive-sm table-striped rounded">
+              <table
+                class="table table-dark shadow table-borderless table-hover table-responsive-sm table-striped rounded">
                 <thead>
                   <tr>
                     <th class="border-right border-dark" scope="col">#</th>
@@ -434,7 +453,7 @@
     <footer class="container">
       <div class="row">
         <div class="col-md-5">
-          <img src="/assets/img/logo.png" alt="borno" class="img-fluid mb-3" style="height: 5rem;" />
+          <img src="../assets/img/logo.png" alt="borno" class="img-fluid mb-3" style="height: 5rem;" />
           <ul class="list-unstyled">
             <li><i class="fa fa-phone text-primary"></i> <a href="tel:+8801XXXXXX" class="text-light">+8801XXXXXX</a>
             </li>
@@ -478,9 +497,9 @@
 
   </section>
 
-  <script defer src="/assets/js/jquery-3.3.1.js"></script>
-  <script defer src="/assets/js/bootstrap.bundle.js"></script>
-  <script defer src="/assets/js/script.js"></script>
+  <script defer src="../assets/js/jquery-3.3.1.js"></script>
+  <script defer src="../assets/js/bootstrap.bundle.js"></script>
+  <script defer src="../assets/js/script.js"></script>
 
 </body>
 
