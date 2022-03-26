@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+
+  <link rel="shortcut icon" href="/assets/img/favicon.png" type="image/png" />
+  <link rel="stylesheet" href="/assets/css/fontawesome.all.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.css" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+
+  <title>Borno - Student Dashboard</title>
+</head>
+
+<body class="bg-secondary text-light">
+  <noscript>You need to enable JavaScript to run this site.</noscript>
+  <div id="preloader" class="vw-100 z-index-99 position-fixed bg-dark">
+    <div id="preloader-img" class="d-flex vh-100">
+      <div class="spinner-border text-primary m-auto" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+  </div>
+  <navbar class="navbar navbar-expand-md navbar-dark bg-secondary fixed-top border-bottom border-dark shadow">
+    <div class="container">
+      <a href="/" class="navbar-brand mr-2">
+        <img src="/assets/img/logo.png" alt="borno" class="img-fluid position-relative"
+          style="top: -5px; width: 3rem;" />
+        <span class="ml-1 text-muted">|</span>
+      </a>
+
+      <button class="navbar-toggler border-0 text-white" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" role="button" data-toggle="dropdown"
+              aria-expanded="false">
+              Dashboard
+            </a>
+            <ul class="dropdown-menu bg-secondary border-dark shadow font-size-unset">
+              <li>
+                <a href="/dashboard/student/calendar.html" class="nav-link active">Student</a>
+              </li>
+              <li>
+                <a href="/dashboard/instructor/calendar.html" class="nav-link">Instructor</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <div class="input-group">
+              <input type="text" class="form-control bg-dark text-light rounded-pill unset-font"
+                style="border-top-right-radius: 0 !important; border-bottom-right-radius: 0 !important;"
+                placeholder="Search For Courses" />
+              <button class="btn btn-dark bg-dark rounded-pill text-light input-group-append"
+                style="border-top-left-radius: 0 !important; border-bottom-left-radius: 0 !important;">
+                <i class="fa fa-search my-auto"></i>
+              </button>
+            </div>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-md-auto my-3 my-md-0 align-items-md-center">
+          <li class="nav-item">
+            <a href="/about.html" class="nav-link">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="/instructor.html" class="nav-link">Instructor</a>
+          </li>
+          <li class="nav-item">
+            <a href="/blogs/" class="nav-link">Blog</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+              <img src="/assets/img/testimonial_shams.jpg" alt="thumb-test" class="img-fluid rounded-circle fit-cover"
+                height="45px" width="45px" />
+            </a>
+            <ul class="dropdown-menu bg-secondary border-dark shadow font-size-unset">
+              <li>
+                <a href="/register.html" class="nav-link">Profile Edit</a>
+              </li>
+              <li>
+                <a href="#" class="nav-link">Invoices</a>
+              </li>
+              <li>
+                <a href="/login.html" class="nav-link">Logout</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </navbar>
+
+  <section class="bg-dark mt-4 pb-4">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb font-weight-bold bg-dark h5">
+          <li class="breadcrumb-item"><a class="text-primary" href="/">Home</a></li>
+          <li class="breadcrumb-item"><a class="text-primary" href="calendar.html">Calendar</a></li>
+          <li class="breadcrumb-item" aria-current="page">Student Dashboard</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 mb-4">
+          <h3>Courses <i class="fa fa-angle-down mb-3"></i></h3>
+          <div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
+            <a class="nav-link text-light bg-dark shadow my-1 active" data-toggle="pill" href="#t-home" role="tab"
+              aria-controls="t-home" aria-selected="true">Home</a>
+            <a class="nav-link text-light bg-dark shadow my-1" data-toggle="pill" href="#t-class" role="tab"
+              aria-controls="t-class" aria-selected="false">Class</a>
+            <a class="nav-link text-light bg-dark shadow my-1" data-toggle="pill" href="#t-assignment" role="tab"
+              aria-controls="t-assignment" aria-selected="false">Assignment</a>
+            <a class="nav-link text-light bg-dark shadow my-1" data-toggle="pill" href="#t-grade" role="tab"
+              aria-controls="t-grade" aria-selected="false">Grade</a>
+            <a class="nav-link text-light bg-dark shadow my-1" data-toggle="pill" href="#t-announcement" role="tab"
+              aria-controls="t-announcement" aria-selected="false">Announcement</a>
+            <a class="nav-link text-light bg-dark shadow my-1" data-toggle="pill" href="#t-evaluation" role="tab"
+              aria-controls="t-evaluation" aria-selected="false">Evaluation</a>
+          </div>
+        </div>
+        <div class="col-md-9">
+          <div class="tab-content">
+            <div class="tab-pane fade show active" id="t-home" role="tabpanel" aria-labelledby="t-home-tab">
+              <h3 class="text-primary">Home</h3>
+              <div class="row">
+                <div class="col-md-6 my-3">
+                  <div class="card bg-dark shadow h-100">
+                    <div class="card-img-top"
+                      style="height: 15rem; background-image: url('/assets/img/banner.jpg'); background-size: cover; background-repeat: no-repeat;">
+                    </div>
+                    <div class="card-body">
+                      <span class="card-text mr-2"><i class="fa fa-user text-primary"></i> Hasan</span>
+                      <span class="card-text mr-2"><i class="fa fa-circle text-primary"></i> Feb 5, 2022</span>
+                      <span class="card-text"><i class="fa fa-folder text-primary"></i> Programming</span>
+                      <h4 class="card-title mt-3">
+                        <strong>Learn Python</strong>
+                      </h4>
+                      <p class="card-text">
+                        Creating software tailored to my games development gaming is a world entertainment
+                        phoenomeonon.The
+                        global games market is currently valued [...]
+                      </p>
+                      <a role="button" href="/blogs/[post].html" class="btn btn-primary rounded-pill text-secondary">
+                        Continue <i class="fa fa-arrow-right"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 my-3">
+                  <div class="card bg-dark shadow h-100">
+                    <div class="card-img-top"
+                      style="height: 15rem; background-image: url('/assets/img/banner.jpg'); background-size: cover; background-repeat: no-repeat;">
+                    </div>
+                    <div class="card-body">
+                      <span class="card-text mr-2"><i class="fa fa-user text-primary"></i> Hasan</span>
+                      <span class="card-text mr-2"><i class="fa fa-circle text-primary"></i> Feb 5, 2022</span>
+                      <span class="card-text"><i class="fa fa-folder text-primary"></i> Programming</span>
+                      <h4 class="card-title mt-3">
+                        <strong>Learn Python</strong>
+                      </h4>
+                      <p class="card-text">
+                        Creating software tailored to my games development gaming is a world entertainment
+                        phoenomeonon.The
+                        global games market is currently valued [...]
+                      </p>
+                      <a role="button" href="/blogs/[post].html" class="btn btn-primary rounded-pill text-secondary">
+                        Continue <i class="fa fa-arrow-right"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 my-3">
+                  <div class="card bg-dark shadow h-100">
+                    <div class="card-img-top"
+                      style="height: 15rem; background-image: url('/assets/img/banner.jpg'); background-size: cover; background-repeat: no-repeat;">
+                    </div>
+                    <div class="card-body">
+                      <span class="card-text mr-2"><i class="fa fa-user text-primary"></i> Hasan</span>
+                      <span class="card-text mr-2"><i class="fa fa-circle text-primary"></i> Feb 5, 2022</span>
+                      <span class="card-text"><i class="fa fa-folder text-primary"></i> Programming</span>
+                      <h4 class="card-title mt-3">
+                        <strong>Learn Python</strong>
+                      </h4>
+                      <p class="card-text">
+                        Creating software tailored to my games development gaming is a world entertainment
+                        phoenomeonon.The
+                        global games market is currently valued [...]
+                      </p>
+                      <a role="button" href="/blogs/[post].html" class="btn btn-primary rounded-pill text-secondary">
+                        Continue <i class="fa fa-arrow-right"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="t-class" role="tabpanel" aria-labelledby="t-class-tab">
+              <h3 class="text-primary mb-4">Class</h3>
+
+              <table class="table table-dark shadow table-borderless table-hover table-striped rounded">
+                <thead>
+                  <tr>
+                    <th class="border-right border-dark" scope="col">#</th>
+                    <th scope="col">Classname</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th class="border-right border-dark" scope="row">1</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th class="border-right border-dark" scope="row">2</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th class="border-right border-dark" scope="row">3</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="tab-pane fade" id="t-assignment" role="tabpanel" aria-labelledby="t-assignment-tab">
+              <h3 class="text-primary mb-4">Assignment</h3>
+
+              <table
+                class="table table-dark shadow table-borderless table-hover table-striped table-responsive-lg rounded">
+                <thead>
+                  <tr>
+                    <th class="border-right border-dark" scope="col">#</th>
+                    <th scope="col">Assignment Name</th>
+                    <th scope="col">Assignment File</th>
+                    <th scope="col">Upload ____________________________</th>
+                    <th scope="col">Submit Date</th>
+                    <th scope="col">Submit List</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th class="border-right border-dark" scope="row">1</th>
+                    <td>Huihui</td>
+                    <td><a href="#" class="text-primary">Download</a></td>
+                    <td>
+                      <input type="file" class="form-control-file bg-dark" />
+                    </td>
+                    <td>12/12/22</td>
+                    <td>0</td>
+                  </tr>
+                  <tr>
+                    <th class="border-right border-dark" scope="row">2</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th class="border-right border-dark" scope="row">3</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="tab-pane fade" id="t-grade" role="tabpanel" aria-labelledby="t-grade-tab">
+              <h3 class="text-primary mb-4">Grade</h3>
+
+              <table class="table table-dark shadow table-borderless table-hover table-striped rounded">
+                <thead>
+                  <tr>
+                    <th class="border-right border-dark" scope="col">#</th>
+                    <th scope="col">Assignment Name</th>
+                    <th scope="col">Grade</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th class="border-right border-dark" scope="row">1</th>
+                    <td>Huihui</td>
+                    <td>A+</td>
+                  </tr>
+                  <tr>
+                    <th class="border-right border-dark" scope="row">2</th>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th class="border-right border-dark" scope="row">3</th>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="tab-pane fade" id="t-announcement" role="tabpanel" aria-labelledby="t-announcement-tab">
+              <h3 class="text-primary mb-4">Announcement</h3>
+
+              <div class="card bg-dark shadow">
+                <div class="card-body">
+                  <span class="card-title d-flex">
+                    <img src="/assets/img/testimonial_shams.jpg" alt="thumb-test"
+                      class="img-fluid rounded-circle fit-cover" height="50px" width="50px" />
+                    <div class="d-inline-flex flex-column justify-content-end ml-3">
+                      <h5 class="m-0 text-primary">Shams Arefin</h5>
+                      <p class="font-weight-normal m-0">February 10, 2022 | 10.50 AM</p>
+                    </div>
+                  </span>
+                  <h5 class="card-title mt-4">
+                    English class at 3 PM has been cancelled
+                  </h5>
+                  <div class="card-text">
+                    <abbr title="comments" class="text-muted text-underline">Comments</abbr>
+                    <div class="card bg-dark border-dark my-3">
+                      <div class="card-body">
+                        <span class="card-title d-flex">
+                          <img src="/assets/img/testimonial_shams.jpg" alt="thumb-test"
+                            class="img-fluid rounded-circle fit-cover" height="50px" width="50px" />
+                          <div class="d-inline-flex flex-column justify-content-start ml-3">
+                            <h5 class="m-0 text-primary">Shams Arefin</h5>
+                            <p class="font-weight-normal m-0">February 10, 2022 | 10.55 AM</p>
+                          </div>
+                          <p class="ml-auto mr-3">Thank You Sir</p>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="card bg-dark border-dark my-3">
+                      <div class="card-body">
+                        <span class="card-title d-flex">
+                          <img src="/assets/img/testimonial_shams.jpg" alt="thumb-test"
+                            class="img-fluid rounded-circle fit-cover" height="50px" width="50px" />
+                          <div class="d-inline-flex flex-column justify-content-start ml-3">
+                            <h5 class="m-0 text-primary">Shams Arefin</h5>
+                            <p class="font-weight-normal m-0">February 10, 2022 | 10.55 AM</p>
+                          </div>
+                          <p class="ml-auto mr-3">Thank You Sir</p>
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="input-group my-4 shadow rounded-pill">
+                      <input type="text" class="form-control bg-secondary font-weight-lighter border-dark rounded-pill"
+                        placeholder="Post a comment..."
+                        style="border-top-right-radius: 0 !important; border-bottom-right-radius: 0 !important;">
+                      <button
+                        class="btn btn-primary rounded-pill shadow input-group-append text-secondary align-items-center"
+                        style="border-top-left-radius: 0 !important; border-bottom-left-radius: 0 !important;">
+                        Send <i class="fa fa-arrow-right"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="t-evaluation" role="tabpanel" aria-labelledby="t-evaluation-tab">
+              <h3 class="text-primary mb-4">Evaluation</h3>
+
+              <div class="card bg-dark shadow">
+                <div class="card-body">
+                  <span class="card-title">
+                    <div class="row">
+                      <div class="col-3 d-flex flex-column justify-content-center align-items-center">
+                        <h1 class="text-primary m-0"><strong>3.8</strong></h1>
+                        <p class="text-primary font-weight-normal m-0"><i class="fa fa-star"></i><i
+                            class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+                            class="fa fa-star"></i></p>
+                        <p>Overall Rating</p>
+                      </div>
+                      <div class="col-9">
+                        <p>
+                          <input type="text" disabled
+                            class="form-control d-inline w-50 bg-secondary font-weight-lighter border-dark rounded-pill font-size-unset mr-2"
+                            placeholder="Course" />
+                          <i class="fa fa-star text-primary"></i>
+                          <i class="fa fa-star text-primary"></i>
+                          <i class="fa fa-star text-primary"></i>
+                          <i class="fa fa-star text-muted"></i>
+                          <i class="fa fa-star text-muted"></i>
+                        </p>
+                        <p>
+                          <input type="text" disabled
+                            class="form-control d-inline w-50 bg-secondary font-weight-lighter border-dark rounded-pill font-size-unset mr-2"
+                            placeholder="Content" />
+                          <i class="fa fa-star text-primary"></i>
+                          <i class="fa fa-star text-primary"></i>
+                          <i class="fa fa-star text-primary"></i>
+                          <i class="fa fa-star text-muted"></i>
+                          <i class="fa fa-star text-muted"></i>
+                        </p>
+                        <p>
+                          <input type="text" disabled
+                            class="form-control d-inline w-50 bg-secondary font-weight-lighter border-dark rounded-pill font-size-unset mr-2"
+                            placeholder="Instructor" />
+                          <i class="fa fa-star text-primary"></i>
+                          <i class="fa fa-star text-primary"></i>
+                          <i class="fa fa-star text-primary"></i>
+                          <i class="fa fa-star text-muted"></i>
+                          <i class="fa fa-star text-muted"></i>
+                        </p>
+                      </div>
+                    </div>
+                  </span>
+                  <div class="card-text">
+                    <abbr title="reviews" class="text-muted text-underline">Reviews</abbr>
+                    <div class="card bg-dark border-dark my-3">
+                      <div class="card-body">
+                        <span class="card-title d-flex">
+                          <img src="/assets/img/testimonial_shams.jpg" alt="thumb-test"
+                            class="img-fluid rounded-circle fit-cover" height="50px" width="50px" />
+                          <div class="d-inline-flex flex-column justify-content-start ml-3">
+                            <h5 class="m-0 text-primary">Shams Arefin</h5>
+                            <p class="font-weight-normal m-0">February 10, 2022 | 10.55 AM</p>
+                            <p class="text-primary font-weight-normal m-0"><i class="fa fa-star"></i><i
+                                class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+                                class="fa fa-star"></i></p>
+                          </div>
+                          <p class="ml-auto mr-3">Amazing</p>
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="input-group my-4 shadow rounded-pill">
+                      <input type="text" class="form-control bg-secondary font-weight-lighter border-dark rounded-pill"
+                        placeholder="Write a review..."
+                        style="border-top-right-radius: 0 !important; border-bottom-right-radius: 0 !important;" />
+                      <button
+                        class="btn btn-primary rounded-pill shadow input-group-append text-secondary align-items-center"
+                        style="border-top-left-radius: 0 !important; border-bottom-left-radius: 0 !important;">
+                        Send <i class="fa fa-arrow-right"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-dark pb-4">
+    <footer class="container">
+      <div class="row">
+        <div class="col-md-5">
+          <img src="/assets/img/logo.png" alt="borno" class="img-fluid mb-3" style="height: 5rem;" />
+          <ul class="list-unstyled">
+            <li><i class="fa fa-phone text-primary"></i> <a href="tel:+8801XXXXXX" class="text-light">+8801XXXXXX</a>
+            </li>
+            <li><i class="fa fa-envelope text-primary"></i> <a href="mailto:info@learnborno.com"
+                class="text-light">info@learnborno.com</a></li>
+            <li><i class="fab fa-internet-explorer text-primary"></i> <a href="https://www.learnborno.com"
+                class="text-light">www.learnborno.com</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h5><strong>Navigate</strong></h5>
+          <ul class="list-unstyled mt-4">
+            <li><a href="#" class="text-light">About</a></li>
+            <li><a href="#" class="text-light">Instructors</a></li>
+            <li><a href="#" class="text-light">Partnerships</a></li>
+            <li><a href="#" class="text-light">Blog</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5><strong>Popular Courses</strong></h5>
+          <ul class="list-unstyled mt-4">
+            <li><a href="#" class="text-light">English Expression Course</a></li>
+            <li><a href="#" class="text-light">Explore Courses</a></li>
+            <li><a href="#" class="text-light">Student Login</a></li>
+            <li><a href="#" class="text-light">Teacher Login</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h5><strong>Company</strong></h5>
+          <ul class="list-unstyled mt-4">
+            <li><a href="#" class="text-light">Privacy Policy</a></li>
+            <li><a href="#" class="text-light">Terms of Use</a></li>
+            <li><a href="#" class="text-light">Refund Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="text-center bg-dark mt-3 text-muted">Designed &amp; developed by <a href="https://rosetech.dev" target="_blank"
+          class="text-primary">Rosetech
+          Solutions Ltd.</a> &copy; <span id="year"></span></p>
+    </footer>
+  </section>
+
+  <script defer src="/assets/js/jquery-3.3.1.js"></script>
+  <script defer src="/assets/js/bootstrap.bundle.js"></script>
+  <script defer src="/assets/js/script.js"></script>
+
+</body>
+
+</html>
