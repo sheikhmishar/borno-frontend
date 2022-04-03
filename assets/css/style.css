@@ -4,6 +4,7 @@
   --color-bg: #3d3d3d;
   --color-bg-dark: #1c1c1c;
   --color-text-secondary: #222;
+  --border-radius: 1.25rem;
 }
 
 @font-face {
@@ -251,4 +252,25 @@ a.text-primary:active {
 .dropdown-menu {
   right: 0;
   left: unset;
+}
+
+.rounded,
+.card {
+  border-radius: var(--border-radius) !important;
+}
+
+.card-img,
+.card-img-top {
+  border-top-left-radius: calc(var(--border-radius) - 1px);
+  border-top-right-radius: calc(var(--border-radius) - 1px);
+}
+
+.table th,
+.table td {
+  padding: var(--border-radius);
+  font-size: medium;
+}
+
+.table td {
+  font-weight: lighter;
 }

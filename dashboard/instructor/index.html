@@ -111,20 +111,32 @@
     <div class="container">
       <div class="row">
         <div class="col-md-3 mb-4">
-          <h3>Courses <i class="fa fa-angle-down mb-3"></i></h3>
+          <div class="btn-group dropdown w-100">
+            <h3 class="text-light" data-toggle="dropdown">
+              <a href="#" class="text-light">Courses <i class="fa fa-angle-down mb-3 ml-2"></i></a>
+            </h3>
+            <div class="dropdown-menu bg-dark p-3 rounded shadow w-100">
+              <ul class="list-unstyled mb-0">
+                <li><a href="#" class="btn btn-primary btn-block mt-1 text-dark">ENG101</a></li>
+                <li><a href="#" class="btn btn-primary btn-block mt-1 text-dark">ENG101</a></li>
+                <li><a href="#" class="btn btn-primary btn-block mt-1 text-dark">ENG101</a></li>
+                <li><a href="#" class="btn btn-primary btn-block mt-1 text-dark">ENG101</a></li>
+              </ul>
+            </div>
+          </div>
           <div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
-            <a class="nav-link text-light bg-dark shadow my-1 active" data-toggle="pill" href="#t-student-list"
-              role="tab" aria-controls="t-student-list" aria-selected="true">Student List</a>
-            <a class="nav-link text-light bg-dark shadow my-1" data-toggle="pill" href="#t-class" role="tab"
-              aria-controls="t-class" aria-selected="false">Edit Class</a>
-            <a class="nav-link text-light bg-dark shadow my-1" data-toggle="pill" href="#t-assignment" role="tab"
-              aria-controls="t-assignment" aria-selected="false">Assignment</a>
-            <a class="nav-link text-light bg-dark shadow my-1" data-toggle="pill" href="#t-feedback" role="tab"
-              aria-controls="t-feedback" aria-selected="false">Feedback</a>
-            <a class="nav-link text-light bg-dark shadow my-1" data-toggle="pill" href="#t-announcement" role="tab"
-              aria-controls="t-announcement" aria-selected="false">Announcement</a>
-            <a class="nav-link text-light bg-dark shadow my-1" data-toggle="pill" href="#t-evaluation" role="tab"
-              aria-controls="t-evaluation" aria-selected="false">Evaluation</a>
+            <a class="nav-link text-light bg-dark rounded shadow h6 my-1 py-3 active" data-toggle="pill"
+              href="#t-student-list" role="tab" aria-controls="t-student-list" aria-selected="true">Student List</a>
+            <a class="nav-link text-light bg-dark rounded shadow h6 my-1 py-3" data-toggle="pill" href="#t-class"
+              role="tab" aria-controls="t-class" aria-selected="false">Edit Class</a>
+            <a class="nav-link text-light bg-dark rounded shadow h6 my-1 py-3" data-toggle="pill" href="#t-assignment"
+              role="tab" aria-controls="t-assignment" aria-selected="false">Assignment</a>
+            <a class="nav-link text-light bg-dark rounded shadow h6 my-1 py-3" data-toggle="pill" href="#t-feedback"
+              role="tab" aria-controls="t-feedback" aria-selected="false">Feedback</a>
+            <a class="nav-link text-light bg-dark rounded shadow h6 my-1 py-3" data-toggle="pill" href="#t-announcement"
+              role="tab" aria-controls="t-announcement" aria-selected="false">Announcement</a>
+            <a class="nav-link text-light bg-dark rounded shadow h6 my-1 py-3" data-toggle="pill" href="#t-evaluation"
+              role="tab" aria-controls="t-evaluation" aria-selected="false">Evaluation</a>
           </div>
         </div>
         <div class="col-md-9">
@@ -177,7 +189,7 @@
               <h3 class="text-primary mb-4">Edit Class</h3>
 
               <table
-                class="table table-dark shadow table-borderless table-hover table-responsive-md table-striped rounded">
+                class="table table-dark shadow table-borderless table-hover table-responsive-lg table-striped rounded">
                 <thead>
                   <tr>
                     <th class="border-right border-dark" scope="col">#</th>
@@ -225,7 +237,8 @@
                     <label>Class Name</label>
                     <input type="text" class="form-control mb-3 text-light bg-secondary" value="ENG101" />
                     <label>Class Content</label>
-                    <input type="text" class="form-control mb-3 text-light bg-secondary" value="Introduction to Essay Paraphrasing" />
+                    <input type="text" class="form-control mb-3 text-light bg-secondary"
+                      value="Introduction to Essay Paraphrasing" />
                     <label>Date</label>
                     <input type="date" class="form-control mb-3 text-light bg-secondary" />
                     <label>Time</label>
@@ -243,7 +256,7 @@
               <h3 class="text-primary mb-4">Assignment</h3>
 
               <table
-                class="table table-dark shadow table-borderless table-hover table-responsive-lg table-striped rounded">
+                class="table table-dark shadow table-borderless table-hover table-responsive-xl table-striped rounded">
                 <thead>
                   <tr>
                     <th class="border-right border-dark" scope="col">#</th>
@@ -303,7 +316,7 @@
               <h3 class="text-primary mb-4">Feedback</h3>
 
               <table
-                class="table table-dark shadow table-borderless table-hover table-responsive-md table-striped rounded">
+                class="table table-dark shadow table-borderless table-hover table-responsive-lg table-striped rounded">
                 <thead>
                   <tr>
                     <th class="border-right border-dark" scope="col">#</th>
@@ -492,8 +505,8 @@
           </ul>
         </div>
       </div>
-      <p class="text-center bg-dark mt-3 text-muted">Designed &amp; developed by <a href="https://rosetech.dev" target="_blank"
-          class="text-primary">Rosetech
+      <p class="text-center bg-dark mt-3 text-muted">Designed &amp; developed by <a href="https://rosetech.dev"
+          target="_blank" class="text-primary">Rosetech
           Solutions Ltd.</a> &copy; <span id="year"></span></p>
     </footer>
 

@@ -111,20 +111,32 @@
     <div class="container">
       <div class="row">
         <div class="col-md-3 mb-4">
-          <h3>Courses <i class="fa fa-angle-down mb-3"></i></h3>
+          <div class="btn-group dropdown w-100">
+            <h3 class="text-light" data-toggle="dropdown">
+              <a href="#" class="text-light">Courses <i class="fa fa-angle-down mb-3 ml-2"></i></a>
+            </h3>
+            <div class="dropdown-menu bg-dark p-3 rounded shadow w-100">
+              <ul class="list-unstyled mb-0">
+                <li><a href="#" class="btn btn-primary btn-block mt-1 text-dark">ENG101</a></li>
+                <li><a href="#" class="btn btn-primary btn-block mt-1 text-dark">ENG101</a></li>
+                <li><a href="#" class="btn btn-primary btn-block mt-1 text-dark">ENG101</a></li>
+                <li><a href="#" class="btn btn-primary btn-block mt-1 text-dark">ENG101</a></li>
+              </ul>
+            </div>
+          </div>
           <div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
-            <a class="nav-link text-light bg-dark shadow my-1 active" data-toggle="pill" href="#t-home" role="tab"
-              aria-controls="t-home" aria-selected="true">Home</a>
-            <a class="nav-link text-light bg-dark shadow my-1" data-toggle="pill" href="#t-class" role="tab"
-              aria-controls="t-class" aria-selected="false">Class</a>
-            <a class="nav-link text-light bg-dark shadow my-1" data-toggle="pill" href="#t-assignment" role="tab"
-              aria-controls="t-assignment" aria-selected="false">Assignment</a>
-            <a class="nav-link text-light bg-dark shadow my-1" data-toggle="pill" href="#t-grade" role="tab"
-              aria-controls="t-grade" aria-selected="false">Grade</a>
-            <a class="nav-link text-light bg-dark shadow my-1" data-toggle="pill" href="#t-announcement" role="tab"
-              aria-controls="t-announcement" aria-selected="false">Announcement</a>
-            <a class="nav-link text-light bg-dark shadow my-1" data-toggle="pill" href="#t-evaluation" role="tab"
-              aria-controls="t-evaluation" aria-selected="false">Evaluation</a>
+            <a class="nav-link text-light bg-dark shadow my-1 py-3 rounded h6 active" data-toggle="pill" href="#t-home"
+              role="tab" aria-controls="t-home" aria-selected="true">Home</a>
+            <a class="nav-link text-light bg-dark shadow my-1 py-3 rounded h6" data-toggle="pill" href="#t-class"
+              role="tab" aria-controls="t-class" aria-selected="false">Class</a>
+            <a class="nav-link text-light bg-dark shadow my-1 py-3 rounded h6" data-toggle="pill" href="#t-assignment"
+              role="tab" aria-controls="t-assignment" aria-selected="false">Assignment</a>
+            <a class="nav-link text-light bg-dark shadow my-1 py-3 rounded h6" data-toggle="pill" href="#t-grade"
+              role="tab" aria-controls="t-grade" aria-selected="false">Grade</a>
+            <a class="nav-link text-light bg-dark shadow my-1 py-3 rounded h6" data-toggle="pill" href="#t-announcement"
+              role="tab" aria-controls="t-announcement" aria-selected="false">Announcement</a>
+            <a class="nav-link text-light bg-dark shadow my-1 py-3 rounded h6" data-toggle="pill" href="#t-evaluation"
+              role="tab" aria-controls="t-evaluation" aria-selected="false">Evaluation</a>
           </div>
         </div>
         <div class="col-md-9">
@@ -223,12 +235,14 @@
                     <td>12:30PM</td>
                     <td>12/12/21</td>
                     <td>
-                      <div class="dropdown">
-                        <a class="btn btn-outline-warning dropdown-toggle rounded-circle py-1" href="#"
-                          role="button" data-toggle="dropdown"></a>
-                        <p class="dropdown-menu bg-dark text-light p-2 w-100">
+                      <div class="dropleft">
+                        <a class="btn btn-outline-warning dropdown-toggle rounded-circle py-1" href="#" role="button"
+                          data-toggle="dropdown"></a>
+                        <div class="dropdown-menu bg-dark text-light p-3 w-100 shadow">
+                          <h6><strong>Topic</strong></h6>
+                          <hr class="border-primary" />
                           Introduction to Essay Paraphrasing
-                        </p>
+                        </div>
                       </div>
 
 
@@ -255,7 +269,7 @@
               <h3 class="text-primary mb-4">Assignment</h3>
 
               <table
-                class="table table-dark shadow table-borderless table-hover table-striped table-responsive-lg rounded">
+                class="table table-dark shadow table-borderless table-hover table-striped table-responsive-xl rounded">
                 <thead>
                   <tr>
                     <th class="border-right border-dark" scope="col">#</th>
