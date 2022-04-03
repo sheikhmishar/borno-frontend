@@ -7,6 +7,15 @@
   --border-radius: 1.25rem;
 }
 
+body.theme-pink {
+  --color-primary: #fc3ac2;
+  --color-primary-dark: rgb(158, 40, 129);
+  --color-bg: #3d3d3d;
+  --color-bg-dark: #1c1c1c;
+  --color-text-secondary: #222;
+  --border-radius: 1.25rem;
+}
+
 @font-face {
   font-family: "montserrat";
   src: local("montserrat"), url("../webfonts/Montserrat-Black.ttf");
