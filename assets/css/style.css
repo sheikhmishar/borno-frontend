@@ -274,3 +274,11 @@ a.text-primary:active {
 .table td {
   font-weight: lighter;
 }
+
+.table tbody tr:nth-child(odd):last-child th:first-child {
+  border-bottom-left-radius: 1.25rem !important;
+}
+
+.table tbody tr:nth-child(odd):last-child td:last-child {
+  border-bottom-right-radius: 1.25rem !important;
+}
