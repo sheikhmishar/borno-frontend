@@ -154,6 +154,10 @@
   background-color: var(--color-hover);
 }
 
+.year{
+  text-align: left;
+}
+
 .year-picker {
   display: flex;
   align-items: center;
@@ -281,4 +285,43 @@
     cursor: pointer;
     animation: to-top 1s forwards;
   }
+}
+
+
+.week-calender table{
+  width: 100%;
+  
+}
+.week-calender td{
+  text-align: center;
+  width: 12.5%;
+  height: 20px;
+  border: 1px solid rgb(190, 190, 190) !important;
+}
+.week-calender th{
+  text-align: center;
+}
+
+.day-calender table{
+  width: 100%;
+  
+}
+.day-calender td:first-child{
+  width: 12.5%;
+  height: 20px;
+  border: 1px solid rgb(190, 190, 190) !important;
+}
+.day-calender td{
+  height: 20px;
+  border: 1px solid rgb(190, 190, 190) !important;
+}
+.day-calender th{
+  text-align: center;
+}
+
+.calendar select{
+  background-color: black;
+  color: #fff;
+  font-weight: bolder;
+  padding: 5px;
 }

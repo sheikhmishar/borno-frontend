@@ -122,60 +122,53 @@
             <div class="card-body p-3">
               <div class="card-text d-flex justify-content-between">
                 <div>
-                  <h5>Course Name</h5>
-                  Teacher's Name
+                  <h5>Course Name</h5>Teacher's Name
                 </div>
                 <div>
                   <h5>2:20 PM</h5>
                 </div>
               </div>
             </div>
-          </a><br />
+          </a><br>
           <a href="./" class="card bg-secondary shadow text-light" style="border-radius: 30px;">
             <div class="card-body p-3">
               <div class="card-text d-flex justify-content-between">
                 <div>
-                  <h5>Course Name</h5>
-                  Teacher's Name
+                  <h5>Course Name</h5>Teacher's Name
                 </div>
                 <div>
                   <h5>4:20 PM</h5>
                 </div>
               </div>
             </div>
-          </a><br />
+          </a><br>
           <a href="./" class="card bg-secondary shadow text-light" style="border-radius: 30px;">
             <div class="card-body p-3">
               <div class="card-text d-flex justify-content-between">
                 <div>
-                  <h5>Assignment Name</h5>
-                  Teacher's Name
+                  <h5>Assignment Name</h5>Teacher's Name
                 </div>
                 <div>
                   <h5>6:20 PM</h5>
                 </div>
               </div>
             </div>
-          </a><br />
-          <h6 class="text-center">
-            <a href="#" style="text-decoration: none; color: #fcc93a;">+ Add Task</a>
+          </a><br>
+          <h6 class="text-center"><a href="#" style="text-decoration: none; color: #fcc93a;">+ Add Task</a>
           </h6>
         </div>
         <div class="col-md-8 my-5">
           <div class="calendar">
             <div class="calendar-header">
-              <span class="month-picker" id="month-picker"></span>
-              <div class="year-picker">
-                <span class="year-change" id="prev-year">
-                  <pre style="color: white;"><</pre>
-                </span>
-                <span id="year"></span>
-                <span class="year-change" id="next-year">
-                  <pre style="color: white;">></pre>
-                </span>
-              </div>
+              <span class="month-picker" id="month-picker"></span><span id="full-date"></span>
+              <span id="year"></span>
+              <select name="selection" id="selection">
+                <option value="calendar-body" selected>This Month</option>
+                <option value="week-calender">This Week</option>
+                <option value="day-calender">Today</option>
+              </select>
             </div>
-            <div class="calendar-body">
+            <div class="calendar-body details">
               <div class="calendar-week-day">
                 <div>Sun</div>
                 <div>Mon</div>
@@ -186,6 +179,14 @@
                 <div>Sat</div>
               </div>
               <div class="calendar-days"></div>
+            </div>
+            <div class="week-calender details">
+              <table id="week-calender-table">
+              </table>
+            </div>
+            <div class="day-calender details">
+              <table id="day-calender-table">
+              </table>
             </div>
             <div class="month-list"></div>
           </div>

@@ -24,7 +24,6 @@ const month_names = [
   "November",
   "December"
 ];
-
 isLeapYear = year => {
   return (
     (year % 4 === 0 && year % 100 !== 0 && year % 400 !== 0) ||
@@ -114,14 +113,84 @@ let currDate = new Date();
 let curr_month = { value: currDate.getMonth() };
 let curr_year = { value: currDate.getFullYear() };
 
-generateCalendar(curr_month.value, curr_year.value);
+generateCalendar(curr_month.value, 2022);
 
-document.querySelector("#prev-year").onclick = () => {
-  --curr_year.value;
-  generateCalendar(curr_month.value, curr_year.value);
-};
+// WeeklyCalender
+days=['Sun','Mon','Tues','Wed','Thu','Fri','Sat'];
+let daysOfMonth = [
+  31,
+  getFebDays(year),
+  31,
+  30,
+  31,
+  30,
+  31,
+  31,
+  30,
+  31,
+  30,
+  31
+];
+let currMonth=currDate.getMonth();
+let currYear=currDate.getFullYear();
+let curr_day = currDate.getDay();
+let curr_date = currDate.getDate();
+document.getElementById('full-date').appendChild(document.createTextNode(month_names[currMonth]+" "+curr_date));
+let newTR = document.createElement('tr');
+newTR.appendChild(document.createElement('th'));
+console.log(curr_month);
+for(let k=0;k<7;k++){
+  let newTH  = document.createElement('th');
+  if (curr_date%daysOfMonth[currMonth]==0){
+    newTH.appendChild(document.createTextNode((curr_date).toString() +' - '+ days[curr_day%7]));
+  }
+  else{
+    newTH.appendChild(document.createTextNode((curr_date%daysOfMonth[currMonth]).toString() +' - '+ days[curr_day%7]));
+  }
+  newTR.appendChild(newTH);
+  curr_date++;
+  curr_day++;
+}
+document.getElementById('week-calender-table').appendChild(newTR);
+console.log(curr_date);
+console.log(curr_day);
+let hour =1;
+for(let i=1;i<=27;i++){
+    let newTR = document.createElement('tr');
+    for(let j=1;j<=8;j++){
+        let newTD = document.createElement('td');
+        if(i%3==1 && j==1){
+            newTD.appendChild(document.createTextNode(hour.toString()+" PM"));
+            hour++;
+        }
+        newTR.appendChild(newTD);
+    }
+    document.getElementById('week-calender-table').appendChild(newTR);
+}
+// Day Calender
+hour =1;
+for(let i=1;i<=27;i++){
+    let newTR = document.createElement('tr');
+    for(let j=1;j<=2;j++){
+        let newTD = document.createElement('td');
+        if(i%3==1 && j==1){
+            newTD.appendChild(document.createTextNode(hour.toString()+" PM"));
+            hour++;
+        }
+        newTR.appendChild(newTD);
+    }
+    document.getElementById('day-calender-table').appendChild(newTR);
+}
 
-document.querySelector("#next-year").onclick = () => {
-  ++curr_year.value;
-  generateCalendar(curr_month.value, curr_year.value);
-};
+$(".week-calender").hide();
+$(".day-calender").hide();
+$(document).ready(function(){
+  $("#selection").change(function(){
+    var name=$("#selection").val();
+    $(".details").hide();
+    $("."+name).show();
+  })
+})
+$("#year").hide();
+$('#month-picker').hide();
+
