@@ -11,6 +11,32 @@
   --color-txt: var(--dark-text);
 }
 
+a.card:hover {
+  background-color: var(--color-primary) !important;
+  color: var(--color-txt) !important;
+  text-decoration: none;
+}
+
+.add-task a{
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+.dropdown a{
+  color: white;
+}
+.dropdown a:hover{
+  text-decoration: none;
+  color: var(--color-primary);
+}
+.dropdown-menu{
+  z-index: 9;
+}
+.curr-date a:hover{
+  text-decoration: none !important;
+  color: var(--color-bg-dark);
+}
+
 .calendar {
   /* height: max-content; */
   /* width: max-content; */
@@ -141,6 +167,17 @@
 }
 
 .calendar-days div.curr-date span {
+  display: none;
+}
+
+.calendar-days div.imp-date,
+.calendar-days div.imp-date:hover {
+  background-color: var(--color-bg-dark);
+  color: var(--white);
+  border-radius: 50%;
+}
+
+.calendar-days div.imp-date span {
   display: none;
 }
 

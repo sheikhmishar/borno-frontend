@@ -35,7 +35,7 @@ getFebDays = year => {
   return isLeapYear(year) ? 29 : 28;
 };
 
-generateCalendar = (month, year) => {
+generateCalendar = (month, year,important_days) => {
   let calendar_days = calendar.querySelector(".calendar-days");
   let calendar_header_year = calendar.querySelector("#year");
 
@@ -72,7 +72,9 @@ generateCalendar = (month, year) => {
     let day = document.createElement("div");
     if (i >= first_day.getDay()) {
       day.classList.add("calendar-day-hover");
-      day.innerHTML = i - first_day.getDay() + 1;
+      day.classList.add("dropdown")
+      day.innerHTML = `<a href="#" data-toggle="dropdown">${i - first_day.getDay() + 1}`;
+      day.innerHTML += `</a>`;
       day.innerHTML += `<span></span>
 							  <span></span>
 							  <span></span>
@@ -83,6 +85,15 @@ generateCalendar = (month, year) => {
         month === currDate.getMonth()
       ) {
         day.classList.add("curr-date");
+        day.innerHTML += `<p class="dropdown-menu bg-dark text-light p-2 w-25">
+                        Today's Tasks<br>1. Lorem<br>2. Lorem
+                        </p>`;
+      }
+      else if(important_days.includes(i - first_day.getDay() + 1)){
+        day.classList.add("imp-date");
+        day.innerHTML += `<p class="dropdown-menu bg-dark text-light p-2 w-25">
+                        Tasks<br>1. Lorem<br>2. Lorem
+                        </p>`;
       }
     }
     calendar_days.appendChild(day);
@@ -113,7 +124,7 @@ let currDate = new Date();
 let curr_month = { value: currDate.getMonth() };
 let curr_year = { value: currDate.getFullYear() };
 
-generateCalendar(curr_month.value, 2022);
+generateCalendar(curr_month.value, 2022, [1,10,20,6]);
 
 // WeeklyCalender
 days=['Sun','Mon','Tues','Wed','Thu','Fri','Sat'];
