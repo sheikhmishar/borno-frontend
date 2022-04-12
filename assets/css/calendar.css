@@ -29,9 +29,6 @@ a.card:hover {
   text-decoration: none;
   color: var(--color-primary);
 }
-.dropdown-menu{
-  z-index: 9;
-}
 .curr-date a:hover{
   text-decoration: none !important;
   color: var(--color-bg-dark);

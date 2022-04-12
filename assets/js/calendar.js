@@ -73,7 +73,7 @@ generateCalendar = (month, year,important_days) => {
     if (i >= first_day.getDay()) {
       day.classList.add("calendar-day-hover");
       day.classList.add("dropdown")
-      day.innerHTML = `<a href="#" data-toggle="dropdown">${i - first_day.getDay() + 1}`;
+      day.innerHTML = `<a href="#" data-toggle="dropdown" class="z-index-0">${i - first_day.getDay() + 1}`;
       day.innerHTML += `</a>`;
       day.innerHTML += `<span></span>
 							  <span></span>
@@ -85,15 +85,21 @@ generateCalendar = (month, year,important_days) => {
         month === currDate.getMonth()
       ) {
         day.classList.add("curr-date");
-        day.innerHTML += `<p class="dropdown-menu bg-dark text-light p-2 w-25">
-                        Today's Tasks<br>1. Lorem<br>2. Lorem
-                        </p>`;
       }
-      else if(important_days.includes(i - first_day.getDay() + 1)){
-        day.classList.add("imp-date");
-        day.innerHTML += `<p class="dropdown-menu bg-dark text-light p-2 w-25">
-                        Tasks<br>1. Lorem<br>2. Lorem
-                        </p>`;
+      else {
+        for (var imp_date of important_days){
+          if ((i - first_day.getDay() + 1)==imp_date['date'] && year==imp_date['year'] && (month+1)==imp_date['month']){
+            day.classList.add("imp-date");
+          }
+        }
+      }
+      for (var imp_date of important_days){
+        if ((i - first_day.getDay() + 1)==imp_date['date'] && year==imp_date['year'] && (month+1)==imp_date['month']){
+          
+          day.innerHTML += `<p class="dropdown-menu z-index-99 bg-dark text-light p-2 w-25">
+                      Tasks<br>${imp_date['message']}<br>qjhcvuyvebw
+                      </p>`;
+        }
       }
     }
     calendar_days.appendChild(day);
@@ -124,7 +130,13 @@ let currDate = new Date();
 let curr_month = { value: currDate.getMonth() };
 let curr_year = { value: currDate.getFullYear() };
 
-generateCalendar(curr_month.value, 2022, [1,10,20,6]);
+let task_days = [
+  {year: 2022, month: 4, date: 10, message: 'whatever'},
+  {year: 2022, month: 4, date: 15, message: 'whatever'},
+  {year: 2022, month: 4, date: 26, message: 'New Kaaaaj'},
+]
+
+generateCalendar(curr_month.value, 2022, task_days);
 
 // WeeklyCalender
 days=['Sun','Mon','Tues','Wed','Thu','Fri','Sat'];
