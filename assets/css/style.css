@@ -4,16 +4,14 @@
   --color-bg: #3d3d3d;
   --color-bg-dark: #1c1c1c;
   --color-text-secondary: #222;
+  --color-accent-pink: #ec7185;
+  --color-accent-blue: #6abff0;
   --border-radius: 1.25rem;
 }
 
-body.theme-pink {
-  --color-primary: #fc3ac2;
-  --color-primary-dark: rgb(158, 40, 129);
-  --color-bg: #3d3d3d;
-  --color-bg-dark: #1c1c1c;
-  --color-text-secondary: #222;
-  --border-radius: 1.25rem;
+body.theme-light {
+  --color-bg: #f8f8f8;
+  --color-bg-dark: #eeeeee;
 }
 
 @font-face {
@@ -118,6 +116,7 @@ section {
   bottom: 0;
   right: 0;
 }
+/* TODO: delete */
 
 .position-bcenter {
   left: 0;
@@ -128,11 +127,13 @@ section {
 .overlay-dark {
   background-color: rgba(0, 0, 0, 0.5);
 }
+/* TODO: delete */
 
 .fit-cover {
   object-fit: cover;
   -o-object-fit: cover;
 }
+/* TODO: delete */
 
 .font-size-unset {
   font-size: unset;
@@ -147,6 +148,11 @@ section {
   border-color: var(--color-primary);
 }
 
+.btn-blue {
+  background-color: var(--color-accent-blue);
+  border-color: var(--color-accent-blue);
+}
+
 .btn-dark {
   background-color: var(--color-bg-dark);
   border-color: var(--color-bg-dark);
@@ -158,9 +164,22 @@ section {
 
 .btn-primary:hover,
 .btn-primary:active,
-.btn-primary:focus {
-  background-color: var(--color-primary-dark) !important;
-  border-color: var(--color-primary-dark) !important;
+.btn-primary:focus,
+.btn-blue:hover,
+.btn-blue:active,
+.btn-blue:focus {
+  background-color: var(--color-accent-pink) !important;
+  border-color: var(--color-accent-pink) !important;
+}
+
+.bg-pink .btn-primary:hover,
+.bg-pink .btn-primary:active,
+.bg-pink .btn-primary:focus,
+.bg-pink .btn-blue:hover,
+.bg-pink .btn-blue:active,
+.bg-pink .btn-blue:focus {
+  background-color: var(--color-accent-blue) !important;
+  border-color: var(--color-accent-blue) !important;
 }
 
 .btn-primary:focus,
@@ -179,13 +198,6 @@ section {
   border-color: var(--color-primary);
 }
 
-.btn-outline-primary:hover,
-.btn-outline-primary:active {
-  color: var(--color-text-secondary) !important;
-  background-color: var(--color-primary) !important;
-  border-color: var(--color-primary) !important;
-}
-
 .text-primary,
 .active > .nav-link,
 .navbar-nav .nav-link.active {
@@ -196,9 +208,25 @@ section {
   color: var(--color-text-secondary) !important;
 }
 
+.text-pink {
+  color: var(--color-accent-pink) !important;
+}
+
+.text-blue {
+  color: var(--color-accent-blue) !important;
+}
+
+@supports (-webkit-text-stroke: 1px var(--color-text-secondary)) {
+  .theme-light .text-stroke-dark {
+    color: var(--color-text-secondary);
+    -webkit-text-stroke: 0.7px var(--color-text-secondary);
+  }
+}
+
 .banner-img {
   height: calc(100vh - 3rem);
 }
+/* TODO: delete */
 
 .bg-primary {
   background-color: var(--color-primary) !important;
@@ -214,6 +242,14 @@ section {
 
 .bg-dark {
   background-color: var(--color-bg-dark) !important;
+}
+
+.bg-blue {
+  background-color: var(--color-accent-blue) !important;
+}
+
+.bg-pink {
+  background-color: var(--color-accent-pink) !important;
 }
 
 a.text-primary:hover,
@@ -266,6 +302,10 @@ a.text-primary:active {
 .rounded,
 .card {
   border-radius: var(--border-radius) !important;
+}
+
+.theme-light .card {
+  background: var(--color-text-secondary);
 }
 
 .card-img,
