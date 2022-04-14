@@ -314,6 +314,25 @@ a.text-primary:active {
   border-top-right-radius: calc(var(--border-radius) - 1px);
 }
 
+.card-alternate.row .card {
+  background: var(--color-accent-pink);
+}
+
+.card-alternate.row > .col-md-6:nth-child(odd) > .card,
+.card-alternate.row > .col-xl-6:nth-child(3n + 1) > .card {
+  background: var(--color-accent-blue);
+}
+
+.card-alternate.row > .col-xl-6:nth-child(3n + 2) > .card {
+  background: var(--color-primary);
+}
+.card-alternate.row > .col-xl-6:nth-child(3n + 2) > .card .text-primary {
+  color: var(--color-accent-blue) !important;
+}
+.card-alternate.row > .col-xl-6:nth-child(3n + 2) > .card .btn-primary {
+  background: var(--color-accent-blue);
+}
+
 .table th,
 .table td {
   padding: var(--border-radius);
