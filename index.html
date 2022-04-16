@@ -143,7 +143,10 @@
       <h2 class="text-center text-blue"><strong>Pick A Course to Get Started</strong></h2>
 
       <div class="row my-5 card-alternate">
-        <div class="col-md-6 col-lg-4 my-3">
+        <div class="col-md-6 col-lg-4 my-3 position-relative">
+          <div class="position-absolute" style="left: -100px; bottom: -100px;">
+            <img src="assets/img/yellow-bg-blob-left.svg" alt="blob" class="img-fluid" style="height: 200px;" />
+          </div>
           <div class="card border-0 shadow h-100">
             <div class="card-img-top" style="height: 200px; background: #0f0f0f; border-radius: 1.25rem 1.25rem 0 0">
             </div>
@@ -209,7 +212,11 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-4 my-3">
+        <div class="col-md-6 col-lg-4 my-3 position-relative">
+          <div class="position-absolute d-md-block d-none" style="right: -100px; top: -100px;">
+            <img src="assets/img/yellow-bg-blob-left.svg" alt="blob" class="img-fluid fa-rotate-180"
+              style="height: 200px;" />
+          </div>
           <div class="card border-0 shadow h-100">
             <div class="card-img-top" style="height: 200px; background: #0f0f0f; border-radius: 1.25rem 1.25rem 0 0">
             </div>
@@ -253,10 +260,10 @@
   </section>
 
   <section class="position-relative bg-dark">
-    <div class="container-fluid position-absolute position-fill h-100 px-0">
-      <div class="row mx-0">
+    <div class="container-fluid position-absolute position-fill px-0">
+      <div class="row mx-0 h-100">
         <div class="col-md-6 p-3">
-          <img class="img-fluid" src="/assets/img/promo-banner-bg.svg" />
+          <img class="img-fluid h-100" src="/assets/img/promo-banner-bg.svg" />
         </div>
       </div>
     </div>
@@ -269,7 +276,7 @@
           <h1>The Brono</h1>
           <h1>Family Today</h1>
           <button class="btn btn-blue px-5 rounded-pill text-secondary mt-4">
-            <h4 class="my-2"><strong>Apply Now <i class="fa fa-arrow-right"></i></strong></h4> 
+            <h4 class="my-2"><strong>Apply Now <i class="fa fa-arrow-right"></i></strong></h4>
           </button>
         </div>
       </div>
@@ -283,7 +290,10 @@
 
       <div class="row my-5">
         <div class="col-md-6 col-lg-4 my-3 position-relative">
-          <div class="position-absolute d-none d-md-block" style="left: -65px; bottom: -65px;">
+          <div class="position-absolute" style="left: -90px; top: 0; bottom: 0;">
+            <img src="/assets/img/salmon-pink-blob.svg" alt="pink-blob" class="img-fluid" style="height: 250px;" />
+          </div>
+          <div class="position-absolute" style="left: -65px; bottom: -65px;">
             <img src="/assets/img/testimonial-card-bottom.png" alt="badge" class="img-fluid" style="height: 130px;" />
           </div>
           <div class="card bg-primary shadow h-100 text-dark border-0 z-index-99">
@@ -323,9 +333,14 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-4 my-3">
+        <div class="col-md-6 col-lg-4 my-3 position-relative">
+          <div class="position-absolute d-none d-md-block" style="right: -90px; top: 0; bottom: 0;">
+            <img src="/assets/img/salmon-pink-blob.svg" alt="pink-blob" class="img-fluid fa-rotate-270"
+              style="height: 250px;" />
+          </div>
           <div class="card bg-primary shadow h-100 text-dark border-0">
             <div class="card-body p-5 position-relative">
+              <!-- TODO: fix overflow on breakpoints -->
               <div class="position-absolute d-none d-md-block" style="top: -80px; right: -80px;">
                 <img src="/assets/img/testimonial-card-badge.png" alt="badge" class="img-fluid" style="height: 160px;">
               </div>
@@ -360,13 +375,19 @@
 
       <div class="row my-5">
         <div class="col-md-2 my-3"></div>
-        <div class="col-md-4 my-3">
-          <div class="card bg-dark shadow h-100 border-primary">
+        <div class="col-md-4 my-3 position-relative">
+          <div class="position-absolute h-100" style="top: 0; right: 1rem;">
+            <img src="assets/img/yellow-pink-bg-blob-left.svg" alt="blob" style="height: 125%;" />
+          </div>
+          <div class="card bg-transparent h-100 border-0">
             <img src="/assets/img/instructor_mahathir.png" alt="thumb-test" class="img-fluid fit-cover" />
           </div>
         </div>
         <div class="col-md-4 my-3">
-          <div class="card bg-dark shadow h-100 border-primary">
+          <div class="position-absolute h-100" style="top: 0; left: 1rem;">
+            <img src="assets/img/yellow-pink-bg-blob-left.svg" alt="blob" class="flip-x" style="height: 125%;" />
+          </div>
+          <div class="card bg-transparent h-100 border-0">
             <img src="/assets/img/instructor_abreen.png" alt="thumb-test" class="img-fluid fit-cover" />
           </div>
         </div>
@@ -381,26 +402,32 @@
         <div class="col-md-4">
           <img class="img-fluid mb-5 mb-md-0" id="get-started" src="/assets/img/get-started.svg" />
         </div>
-        <div class="col-md-8 pl-md-5 d-flex flex-column justify-content-center">
-          <h6>Get Started</h6>
-          <h2 class="text-pink">
-            <strong>Not Sure Where to Begin? <br />
-              Take Our Quiz</strong>
-          </h2>
-          <br />
-          <p>
-            Get started now with hunderds of courses and thousands of
-            labs-with new additions published every weeks.
-          </p>
-          <br />
-          <div>
-            <button class="btn btn-primary rounded-pill shadow mr-2 text-secondary">
-              Our Quiz <i class="fa fa-arrow-right"></i>
-            </button>
-            <button class="btn btn-blue shadow rounded-pill">
-              View Plans <i class="fa fa-arrow-right"></i>
-            </button>
+        <div class="col-md-8 pl-md-5 d-flex flex-column justify-content-center position-relative">
+          <div class="position-absolute position-fill h-100">
+            <img src="assets/img/blue-bg-blob.svg" alt="blob" class="img-fluid" style="height: 100%;" />
           </div>
+          <div class="container card bg-transparent border-0">
+            <h6>Get Started</h6>
+            <h2 class="text-pink">
+              <strong>Not Sure Where to Begin? <br />
+                Take Our Quiz</strong>
+            </h2>
+            <br />
+            <p>
+              Get started now with hunderds of courses and thousands of
+              labs-with new additions published every weeks.
+            </p>
+            <br />
+            <div>
+              <button class="btn btn-primary rounded-pill shadow mr-2 text-secondary">
+                Our Quiz <i class="fa fa-arrow-right"></i>
+              </button>
+              <button class="btn btn-blue shadow rounded-pill">
+                View Plans <i class="fa fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
