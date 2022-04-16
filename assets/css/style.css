@@ -216,6 +216,10 @@ section {
   color: var(--color-accent-blue) !important;
 }
 
+.text-shadow-primary {
+  text-shadow: 1.5px 1.5px var(--color-primary);
+}
+
 @supports (-webkit-text-stroke: 1px var(--color-text-secondary)) {
   .theme-light .text-stroke-dark {
     color: var(--color-text-secondary);
@@ -261,6 +265,7 @@ a.text-primary:active {
 .form-control {
   border: 0;
   outline: 0;
+  font-weight: lighter;
 }
 
 .unset-font {
@@ -286,6 +291,34 @@ a.text-primary:active {
 .nav-pills .nav-link.active {
   background-color: var(--color-primary) !important;
   color: var(--color-text-secondary) !important;
+}
+
+nav a.nav-link:hover,
+nav a.nav-link.active:hover,
+a.text-light:not(.nav *):not(.btn):hover,
+a.text-dark:not(.nav *):not(.btn):hover {
+  transition: color 0.2s;
+  color: var(--color-accent-pink) !important;
+}
+
+.nav a.text-light:hover,
+.nav a.text-dark:hover,
+.nav a.text-light:focus,
+.nav a.text-dark:focus {
+  transition: background-color 0.2s;
+  background-color: var(--color-accent-pink) !important;
+}
+
+/* TODO */
+a.nav-link.text-light.btn:hover,
+a.nav-link.text-light.btn:focus {
+  color: #ffffff !important;
+}
+
+.navbar-nav .nav-item:nth-child(2) .btn:hover,
+.navbar-nav .nav-item:nth-child(2) .btn:active,
+.navbar-nav .nav-item:nth-child(2) .btn:focus {
+  background-color: var(--color-accent-pink);
 }
 
 .table-dark,
@@ -318,9 +351,33 @@ a.text-primary:active {
   background: var(--color-accent-pink);
 }
 
+.card-alternate.row .card .btn:hover {
+  background: var(--color-accent-blue) !important;
+}
+
+.card-alternate.row .card a.card-link.text-primary:hover {
+  color: var(--color-accent-blue) !important;
+}
+
 .card-alternate.row > .col-md-6:nth-child(odd) > .card,
 .card-alternate.row > .col-xl-6:nth-child(3n + 1) > .card {
   background: var(--color-accent-blue);
+}
+
+.card-alternate.row > .col-md-6:nth-child(odd) > .card .btn:hover,
+.card-alternate.row > .col-xl-6:nth-child(3n + 1) > .card .btn:hover {
+  background: var(--color-accent-pink) !important;
+}
+
+.card-alternate.row
+  > .col-md-6:nth-child(odd)
+  > .card
+  a.card-link.text-primary:hover,
+.card-alternate.row
+  > .col-xl-6:nth-child(3n + 1)
+  > .card
+  a.card-link.text-primary:hover {
+  color: var(--color-accent-pink) !important;
 }
 
 .card-alternate.row > .col-xl-6:nth-child(3n + 2) > .card {
@@ -330,7 +387,10 @@ a.text-primary:active {
   color: var(--color-accent-blue) !important;
 }
 .card-alternate.row > .col-xl-6:nth-child(3n + 2) > .card .btn-primary {
-  background: var(--color-accent-blue);
+  background: var(--color-accent-blue) !important;
+}
+.card-alternate.row > .col-xl-6:nth-child(3n + 2) > .card .btn-primary:hover {
+  background: var(--color-accent-pink) !important;
 }
 
 .table th,

@@ -23,10 +23,11 @@
       </div>
     </div>
   </div>
-  <navbar class="navbar navbar-expand-md navbar-dark bg-secondary fixed-top border-bottom border-dark shadow">
+  <nav class="navbar navbar-expand-md navbar-dark bg-secondary fixed-top border-bottom border-dark shadow">
     <div class="container">
       <a href="/" class="navbar-brand mr-2">
-        <img src="/assets/img/logo.png" alt="borno" class="img-fluid position-relative" style="top: -5px; width: 3rem;" />
+        <img src="/assets/img/logo.png" alt="borno" class="img-fluid position-relative"
+          style="top: -5px; width: 3rem;" />
         <span class="ml-1 text-muted">|</span>
       </a>
 
@@ -44,7 +45,7 @@
             <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
               Dashboard
             </a>
-            <ul class="dropdown-menu bg-secondary border-dark shadow font-size-unset">
+            <ul class="dropdown-menu bg-secondary border-0 shadow font-size-unset">
               <li>
                 <a href="/dashboard/student/calendar.html" class="nav-link">Student</a>
               </li>
@@ -58,7 +59,7 @@
               <input type="text" class="form-control bg-dark text-light rounded-pill unset-font"
                 style="border-top-right-radius: 0 !important; border-bottom-right-radius: 0 !important;"
                 placeholder="Search For Courses" />
-              <button class="btn btn-dark bg-dark rounded-pill text-light input-group-append"
+              <button class="btn btn-dark rounded-pill text-light input-group-append"
                 style="border-top-left-radius: 0 !important; border-bottom-left-radius: 0 !important;">
                 <i class="fa fa-search my-auto"></i>
               </button>
@@ -89,7 +90,7 @@
         </ul>
       </div>
     </div>
-  </navbar>
+  </nav>
 
   <section class="bg-dark mt-4 pb-4">
     <div class="container">
@@ -106,10 +107,14 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
+          <h2 class="text-pink">
+            <strong>OUR MISSION IS TO</strong>
+          </h2>
+          <h2 class="text-blue">
+            <strong>REVOLUTIONIZE THE WAY</strong>
+          </h2>
           <h2 class="text-primary mb-4">
-            OUR MISSION IS TO <br />
-            REVOLUTIONIZE THE WAY <br />
-            WE VIEW EDUCATION.
+            <strong>WE VIEW EDUCATION.</strong>
           </h2>
           <p class="text-justify">
             Education is not just a means to get certiﬁed, but a way to
@@ -134,33 +139,40 @@
     </div>
   </section>
 
-  <section class="bg-dark position-relative border-bottom border-dark"
-    style="background-image: url('/assets/img/promo-banner-bg.jpg'); background-attachment: fixed; background-repeat: no-repeat; background-size: cover;">
-    <div class="container-fluid position-absolute position-fill px-0">
-      <div class="row h-100 w-100 mx-0">
-        <div class="col-md-6 position-relative">
-          <div class="position-absolute overlay-dark position-fill"></div>
+  <section class="bg-dark position-relative">
+    <div class="container-fluid position-absolute position-fill h-100 px-0">
+      <div class="row mx-0 h-100">
+        <div class="col-md-6 p-3 position-relative h-100">
+          <!-- TODO: fix -->
+          <!-- <div class="position-absolute overlay-dark position-fill h-100"></div> -->
+          <img class="img-fluid" src="/assets/img/promo-banner-bg.svg" />
         </div>
       </div>
     </div>
-    <div class="container py-5">
+    <div class="container-fluid position-absolute position-fill h-100 px-0">
+      <div class="row mx-0 h-100">
+        <div class="col-md-6 p-3 position-relative h-100">
+          <div class="position-absolute overlay-dark position-fill h-100"></div>
+          <!-- <img class="img-fluid" src="/assets/img/promo-banner-bg.svg" /> -->
+        </div>
+      </div>
+    </div>
+    <div class="container">
       <div class="row">
-        <div class="col-md-6 mb-5">
-          <div class="pr-md-4">
-            <h1>Start your</h1>
-            <h1>Learning</h1>
-            <h1>Journey & Join</h1>
-            <h1>The Borno</h1>
-            <h1>Family Today</h1>
-            <button class="btn btn-primary rounded-pill text-secondary mt-5">
-              Apply Now <i class="fa fa-arrow-right"></i>
-            </button>
-          </div>
+        <div class="col-md-6 py-5 text-light">
+          <h1>Start your</h1>
+          <h1>Learning</h1>
+          <h1>Journey & Join</h1>
+          <h1>The Brono</h1>
+          <h1>Family Today</h1>
+          <button class="btn btn-blue px-5 rounded-pill text-secondary mt-4">
+            <h4 class="my-2"><strong>Apply Now <i class="fa fa-arrow-right"></i></strong></h4>
+          </button>
         </div>
         <div class="col-md-6">
           <div class="row pl-md-4">
             <div class="col-6 mb-3">
-              <div class="card h-100 bg-dark p-3">
+              <button class="btn btn-blue h-100 shadow p-3">
                 <div class="card-body text-center">
                   <div class="card-img-top">
                     <i class="fa fa-book-reader fa-3x text-primary"></i>
@@ -169,34 +181,34 @@
                     World Class Instuctors Certiﬁed & Experienced
                   </div>
                 </div>
-              </div>
+              </button>
             </div>
             <div class="col-6 mb-3">
-              <div class="card h-100 bg-dark p-3">
+              <button class="btn btn-primary h-100 text-dark shadow p-3">
                 <div class="card-body text-center">
                   <div class="card-img-top">
-                    <i class="fa fa-book-reader fa-3x text-primary"></i>
+                    <i class="fa fa-book-reader fa-3x"></i>
                   </div>
                   <div class="card-text mt-4">
                     Int. Standard Curriculum Proven methods of learning
                   </div>
                 </div>
-              </div>
+              </button>
             </div>
             <div class="col-6 mt-3">
-              <div class="card h-100 bg-dark p-3">
+              <button class="btn btn-primary h-100 text-dark shadow p-3">
                 <div class="card-body text-center">
                   <div class="card-img-top">
-                    <i class="fa fa-book-reader fa-3x text-primary"></i>
+                    <i class="fa fa-book-reader fa-3x"></i>
                   </div>
                   <div class="card-text mt-4">
                     Interactive Courses Engagement in all corners of the classroom
                   </div>
                 </div>
-              </div>
+              </button>
             </div>
             <div class="col-6 mt-3">
-              <div class="card h-100 bg-dark p-3">
+              <button class="btn btn-blue h-100 shadow p-3">
                 <div class="card-body text-center">
                   <div class="card-img-top">
                     <i class="fa fa-book-reader fa-3x text-primary"></i>
@@ -205,7 +217,7 @@
                     One-to-One Access Always get Answers
                   </div>
                 </div>
-              </div>
+              </button>
             </div>
           </div>
         </div>
@@ -216,7 +228,7 @@
   <section>
     <div class="container">
       <h6 class="text-center">Meet Our Instructors</h6>
-      <h2 class="text-center text-primary">The experts behind the courses</h2>
+      <h2 class="text-center text-pink text-shadow-primary"><strong>The experts behind the courses</strong></h2>
 
       <div class="row mt-5">
         <div class="col-md-2"></div>
@@ -259,7 +271,7 @@
                 Program and hone your skills to change the way your students
                 view education.
               </div>
-              <button class="btn btn-primary rounded-pill shadow text-secondary">
+              <button class="btn btn-blue rounded-pill shadow text-secondary">
                 Know More <i class="fa fa-arrow-right"></i>
               </button>
             </div>
@@ -312,14 +324,14 @@
                     </div>
                     <div class="input-group mb-3">
                       <button class="btn btn-dark pl-0 input-group-prepend">
-                        <i class="fa fa-lock text-primary"></i>
+                        <i class="fa fa-lock text-blue"></i>
                       </button>
                       <input type="password" class="form-control bg-dark text-light border-secondary border-bottom"
                         name="name" minlength="5" placeholder="Password" />
                     </div>
                     <div class="input-group mb-5">
                       <button class="btn btn-dark pl-0 input-group-prepend">
-                        <i class="fa fa-lock text-primary"></i>
+                        <i class="fa fa-lock text-pink"></i>
                       </button>
                       <input type="password" class="form-control bg-dark text-light border-secondary border-bottom"
                         name="name" minlength="5" placeholder="Repeat Password" />
@@ -363,9 +375,9 @@
         <div class="col-md-5">
           <img src="/assets/img/logo.png" alt="borno" class="img-fluid mb-3" style="height: 5rem;" />
           <ul class="list-unstyled">
-            <li><i class="fa fa-phone text-primary"></i> <a href="tel:+8801XXXXXX" class="text-light">+8801XXXXXX</a>
+            <li><i class="fa fa-phone text-blue"></i> <a href="tel:+8801XXXXXX" class="text-light">+8801XXXXXX</a>
             </li>
-            <li><i class="fa fa-envelope text-primary"></i> <a href="mailto:info@learnborno.com"
+            <li><i class="fa fa-envelope text-pink"></i> <a href="mailto:info@learnborno.com"
                 class="text-light">info@learnborno.com</a></li>
             <li><i class="fab fa-internet-explorer text-primary"></i> <a href="https://www.learnborno.com"
                 class="text-light">www.learnborno.com</a></li>
@@ -398,8 +410,8 @@
           </ul>
         </div>
       </div>
-      <p class="text-center bg-dark mt-3 text-muted">Designed &amp; developed by <a href="https://rosetech.dev" target="_blank"
-          class="text-primary">Rosetech
+      <p class="text-center bg-dark mt-3 text-muted">Designed &amp; developed by <a href="https://rosetech.dev"
+          target="_blank" class="text-primary">Rosetech
           Solutions Ltd.</a> &copy; <span id="year"></span></p>
     </footer>
   </section>
