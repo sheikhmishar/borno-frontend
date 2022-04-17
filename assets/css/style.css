@@ -354,6 +354,7 @@ a.nav-link.text-light.btn:focus {
 
 .card-alternate.row .card .btn:hover {
   background: var(--color-accent-blue) !important;
+  border-color: var(--color-accent-blue) !important;
 }
 
 .card-alternate.row .card a.card-link.text-primary:hover {
@@ -368,6 +369,7 @@ a.nav-link.text-light.btn:focus {
 .card-alternate.row > .col-md-6:nth-child(odd) > .card .btn:hover,
 .card-alternate.row > .col-xl-6:nth-child(3n + 1) > .card .btn:hover {
   background: var(--color-accent-pink) !important;
+  border-color: var(--color-accent-pink) !important;
 }
 
 .card-alternate.row
@@ -389,9 +391,11 @@ a.nav-link.text-light.btn:focus {
 }
 .card-alternate.row > .col-xl-6:nth-child(3n + 2) > .card .btn-primary {
   background: var(--color-accent-blue) !important;
+  border-color: var(--color-accent-blue) !important;
 }
 .card-alternate.row > .col-xl-6:nth-child(3n + 2) > .card .btn-primary:hover {
   background: var(--color-accent-pink) !important;
+  border-color: var(--color-accent-pink) !important;
 }
 
 .table th,

@@ -80,7 +80,7 @@
             <a href="/blogs" class="nav-link">Blog</a>
           </li>
         </ul>
-        <a href="login.html" role="button" class="btn btn-primary bg-primary-dark border-0 rounded-pill shadow">
+        <a href="login.html" role="button" class="btn btn-primary bg-primary-dark border-0 rounded-pill shadow mb-3 mb-md-0">
           Login
         </a>
         <ul class="navbar-nav my-3 my-md-0 d-none d-md-inline">
@@ -99,9 +99,9 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto">
-          <div class="card p-5 bg-secondary">
+          <div class="card p-5 bg-secondary border-0 shadow-sm">
             <div class="card-body">
-              <div class="card-title text-center text-primary mb-5">
+              <div class="card-title text-center text-pink mb-5">
                 <h2><strong>Login</strong></h2>
               </div>
               <!-- <form action="dashboard/student.html" method="post"> -->
@@ -117,7 +117,7 @@
                 <div class="input-group mb-3">
                   <button class="btn btn-dark d-flex align-items-center input-group-prepend"
                     style="border-bottom: 1px solid #777 !important;">
-                    <i class="fa fa-lock text-primary"></i>
+                    <i class="fa fa-lock text-blue"></i>
                   </button>
                   <input type="password" class="form-control bg-dark text-light border-secondary border-bottom"
                     name="name" minlength="5" placeholder="Password" />
@@ -125,7 +125,7 @@
                 <div class="input-group mb-5">
                   <button class="btn btn-dark d-flex align-items-center input-group-prepend"
                     style="border-bottom: 1px solid #777 !important;">
-                    <i class="fa fa-lock text-primary"></i>
+                    <i class="fa fa-lock text-pink"></i>
                   </button>
                   <input type="password" class="form-control bg-dark text-light border-secondary border-bottom"
                     name="name" minlength="5" placeholder="Repeat Password" />
@@ -157,7 +157,7 @@
           </h2>
           <br />
           <div class="input-group">
-            <input type="text" class="form-control bg-light font-weight-lighter border-light rounded-pill shadow"
+            <input id="offer" type="text" class="form-control bg-light font-weight-lighter border-light rounded-pill shadow"
               placeholder="Email"
               style="border-top-right-radius: 0 !important; border-bottom-right-radius: 0 !important;" />
             <button class="btn btn-primary rounded-pill shadow input-group-append text-secondary align-items-center"
@@ -185,25 +185,23 @@
           </ul>
         </div>
         <div class="col-md-2">
-          <h5><strong>Navigate</strong></h5>
+          <h5 class="text-blue"><strong>Navigate</strong></h5>
           <ul class="list-unstyled mt-4">
-            <li><a href="#" class="text-light">About</a></li>
-            <li><a href="#" class="text-light">Instructors</a></li>
-            <li><a href="#" class="text-light">Partnerships</a></li>
-            <li><a href="#" class="text-light">Blog</a></li>
+            <li><a href="/about.html" class="text-light">About</a></li>
+            <li><a href="/instructor.html" class="text-light">Instructors</a></li>
+            <li><a href="/blogs" class="text-light">Blog</a></li>
           </ul>
         </div>
         <div class="col-md-3">
-          <h5><strong>Popular Courses</strong></h5>
+          <h5 class="text-pink"><strong>Popular Courses</strong></h5>
           <ul class="list-unstyled mt-4">
-            <li><a href="#" class="text-light">English Expression Course</a></li>
-            <li><a href="#" class="text-light">Explore Courses</a></li>
-            <li><a href="#" class="text-light">Student Login</a></li>
-            <li><a href="#" class="text-light">Teacher Login</a></li>
+            <li><a href="/course-details.html" class="text-light">English Expression Course</a></li>
+            <li><a href="/courses.html" class="text-light">Explore Courses</a></li>
+            <li><a href="/login.html" class="text-light">Login</a></li>
           </ul>
         </div>
         <div class="col-md-2">
-          <h5><strong>Company</strong></h5>
+          <h5 class="text-blue"><strong>Company</strong></h5>
           <ul class="list-unstyled mt-4">
             <li><a href="#" class="text-light">Privacy Policy</a></li>
             <li><a href="#" class="text-light">Terms of Use</a></li>

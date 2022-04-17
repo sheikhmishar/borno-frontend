@@ -15,7 +15,9 @@ $(window).on("load", function() {
   var tabCards = $(".tab-content > .tab-pane > .card");
   var tables = $("table.table");
   var footerImage = $("footer img");
-  var formControls = $("input.form-control");
+  var blogSidebarCards = $(".blog-sidebar .card");
+  var blogSidebarInputs = $(".blog-sidebar input.form-control");
+  var formControls = $("input.form-control:not(#offer)");
   var bannerImage = $("#banner");
   var getStarted = $("#get-started");
   var isDarkTheme = !body.hasClass("theme-light");
@@ -40,6 +42,10 @@ $(window).on("load", function() {
       navSearch.addClass("text-light");
       tabs.removeClass("bg-light");
       tabs.addClass("bg-dark");
+      blogSidebarCards.removeClass("bg-light");
+      blogSidebarCards.addClass("bg-dark");
+      blogSidebarInputs.removeClass("bg-light");
+      blogSidebarInputs.addClass("bg-dark");
       tabCards.removeClass("bg-light");
       tabCards.addClass("bg-dark");
       tables.addClass("table-dark");
@@ -64,6 +70,10 @@ $(window).on("load", function() {
       tabs.addClass("bg-light");
       tabCards.removeClass("bg-dark");
       tabCards.addClass("bg-light");
+      blogSidebarCards.removeClass("bg-dark");
+      blogSidebarCards.addClass("bg-light");
+      blogSidebarInputs.removeClass("bg-dark");
+      blogSidebarInputs.addClass("bg-light");
       tables.removeClass("table-dark");
     }
   }
