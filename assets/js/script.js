@@ -18,6 +18,7 @@ $(window).on("load", function() {
   var blogSidebarCards = $(".blog-sidebar .card");
   var blogSidebarInputs = $(".blog-sidebar input.form-control");
   var formControls = $("input.form-control:not(#offer)");
+  var customSelect = $(".custom-select");
   var bannerImage = $("#banner");
   var getStarted = $("#get-started");
   var isDarkTheme = !body.hasClass("theme-light");
@@ -38,6 +39,8 @@ $(window).on("load", function() {
       bannerImage.prop("src", "/assets/img/banner.svg");
       formControls.removeClass("text-secondary");
       formControls.addClass("text-light");
+      customSelect.removeClass("text-secondary");
+      customSelect.addClass("text-light");
       navSearch.removeClass("text-dark");
       navSearch.addClass("text-light");
       tabs.removeClass("bg-light");
@@ -64,6 +67,8 @@ $(window).on("load", function() {
       bannerImage.prop("src", "/assets/img/banner-dark.svg");
       formControls.removeClass("text-light");
       formControls.addClass("text-secondary");
+      customSelect.removeClass("text-light");
+      customSelect.addClass("text-secondary");
       navSearch.addClass("text-dark");
       navSearch.removeClass("text-light");
       tabs.removeClass("bg-dark");

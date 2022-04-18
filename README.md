@@ -1,0 +1,1 @@
+This repository contains the web frontend for a bangladeshi education platform startup named "Borno". The site is temporarily hosted at: https://borno.sheikhmishar.com/
