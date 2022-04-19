@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="/assets/css/bootstrap.css" />
   <link rel="stylesheet" href="/assets/css/style.css" />
 
-  <title>Borno - Register</title>
+  <title>Borno - Course Join Confirmation</title>
 </head>
 
 <body class="bg-secondary text-light">
@@ -42,7 +42,8 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav align-items-center">
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-center" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle text-center" href="#" role="button" data-toggle="dropdown"
+              aria-expanded="false">
               Dashboard
             </a>
             <ul class="dropdown-menu bg-secondary border-0 shadow font-size-unset text-center">
@@ -68,20 +69,21 @@
         </ul>
         <ul class="navbar-nav ml-md-auto my-3 my-md-0">
           <li class="nav-item">
-            <a href="courses.html" class="nav-link">Courses</a>
+            <a href="courses.html" class="nav-link active">Courses</a>
           </li>
           <li class="nav-item">
-            <a href="about.html" class="nav-link">About</a>
+            <a href="/about.html" class="nav-link">About</a>
           </li>
           <li class="nav-item">
-            <a href="instructor.html" class="nav-link">Instructor</a>
+            <a href="/instructor.html" class="nav-link">Instructor</a>
           </li>
           <li class="nav-item">
-            <a href="/blogs" class="nav-link">Blog</a>
+            <a href="blogs/" class="nav-link">Blog</a>
           </li>
         </ul>
-        <a href="register.html" role="button" class="btn btn-primary bg-primary-dark border-0 rounded-pill shadow mb-3 mb-md-0">
-          Register
+        <a href="/login.html" role="button"
+          class="btn btn-primary rounded-pill shadow text-secondary font-size-unset mb-3 mb-md-0">
+          Login
         </a>
         <ul class="navbar-nav my-3 my-md-0 d-none d-md-inline">
           <li class="nav-item">
@@ -92,69 +94,50 @@
     </div>
   </nav>
 
-  <div class="pb-5 mb-4 bg-primary">
-  </div>
+  <section class="bg-dark mt-4 pb-4">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb font-weight-bold bg-dark h5">
+          <li class="breadcrumb-item"><a class="text-primary" href="/">Home</a></li>
+          <li class="breadcrumb-item"><a class="text-primary" href="courses.html">Courses</a></li>
+          <li class="breadcrumb-item active text-reset" aria-current="page">Course Join Confirmation</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+
+          <h2 class="text-primary"><strong>English Expression Course <span class="text-pink">Batch: #2</span> </strong>
+          </h2>
+          <h6><strong>10 Live Online Classes 5 In-Person</strong></h6>
+          <p class="mb-4"><i class="fa fa-user text-primary mb-3"></i> Mentor Name: Kazi Haque</p>
+
+          <div class="card p-3 bg-dark border-0 shadow-sm">
+            <div class="card-body">
+              <h4 class="card-title text-center">
+                <strong>
+                  Course Join Confirmation
+                </strong>
+              </h4>
+              <hr class="border border-primary mb-4" />
+              <p>Thanks for applying for this course. You will be notified once approved</p>
+              <a href="/dashboard/student/#t-invoice" class="btn btn-primary btn-block shadow mt-4 text-secondary" type="submit">Go to Dashboard</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section class="bg-dark">
     <div class="container">
       <div class="row">
-        <div class="col-lg-8 mx-auto">
-          <div class="card p-5 bg-secondary border-0 shadow-sm">
-            <div class="card-body">
-              <div class="card-title text-center text-pink mb-5">
-                <h2><strong>Register</strong></h2>
-              </div>
-              <form action="login.html">
-                <div class="input-group my-3">
-                  <button class="btn btn-dark d-flex align-items-center input-group-prepend"
-                    style="border-bottom: 1px solid #777 !important;">
-                    <i class="fa fa-user-circle text-primary"></i>
-                  </button>
-                  <input type="text" class="form-control bg-dark text-light border-secondary border-bottom" name="name"
-                    minlength="6" placeholder="Name" />
-                </div>
-                <div class="input-group my-3">
-                  <button class="btn btn-dark d-flex align-items-center input-group-prepend"
-                    style="border-bottom: 1px solid #777 !important;">
-                    <i class="fa fa-phone text-blue"></i>
-                  </button>
-                  <input type="tel" class="form-control bg-dark text-light border-secondary border-bottom" name="phone"
-                    minlength="6" placeholder="Phone" />
-                </div>
-                <div class="input-group my-3">
-                  <button class="btn btn-dark d-flex align-items-center input-group-prepend"
-                    style="border-bottom: 1px solid #777 !important;">
-                    <i class="fa fa-envelope text-pink"></i>
-                  </button>
-                  <input type="email" class="form-control bg-dark text-light border-secondary border-bottom"
-                    name="email" minlength="6" placeholder="Email" />
-                </div>
-                <div class="input-group mb-3">
-                  <button class="btn btn-dark d-flex align-items-center input-group-prepend"
-                    style="border-bottom: 1px solid #777 !important;">
-                    <i class="fa fa-lock text-primary"></i>
-                  </button>
-                  <input type="password" class="form-control bg-dark text-light border-secondary border-bottom"
-                    name="name" minlength="5" placeholder="Password" />
-                </div>
-                <div class="input-group mb-5">
-                  <button class="btn btn-dark d-flex align-items-center input-group-prepend"
-                    style="border-bottom: 1px solid #777 !important;">
-                    <i class="fa fa-lock text-blue"></i>
-                  </button>
-                  <input type="password" class="form-control bg-dark text-light border-secondary border-bottom"
-                    name="name" minlength="5" placeholder="Repeat Password" />
-                </div>
-                <div class="text-center">
-                  <p class="font-weight-lighter text-muted">Already have an account? <a href="login.html"
-                      class="text-white">Login</a></p>
-                  <button type="submit" class="btn btn-primary shadow text-secondary rounded-pill">
-                    Sign Up <i class="fa fa-arrow-right"></i>
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
+        <div class="col">
+          <h2 class="text-center"><strong>Have Queries? Send Us Email</strong></h2>
         </div>
       </div>
     </div>
@@ -163,8 +146,46 @@
   <section>
     <div class="container">
       <div class="row">
-        <div class="col-md-6 mx-auto text-center">
-          <h2 class="bg-secondary">
+        <div class="col-md-6">
+          <div class="card p-1 border-light border">
+            <div class="bg-secondary p-4 rounded">
+              <div class="card bg-dark py-4 shadow">
+                <div class="card-body">
+                  <form action=".." method="post">
+                    <div class="input-group my-3">
+                      <button class="btn btn-dark pl-0 input-group-prepend">
+                        <i class="fa fa-user-circle text-primary"></i>
+                      </button>
+                      <input type="email" class="form-control bg-dark text-light border-secondary border-bottom"
+                        name="email" minlength="6" placeholder="Email" />
+                    </div>
+                    <div class="input-group mb-3">
+                      <button class="btn btn-dark pl-0 input-group-prepend">
+                        <i class="fa fa-lock text-blue"></i>
+                      </button>
+                      <input type="password" class="form-control bg-dark text-light border-secondary border-bottom"
+                        name="name" minlength="5" placeholder="Password" />
+                    </div>
+                    <div class="input-group mb-5">
+                      <button class="btn btn-dark pl-0 input-group-prepend">
+                        <i class="fa fa-lock text-pink"></i>
+                      </button>
+                      <input type="password" class="form-control bg-dark text-light border-secondary border-bottom"
+                        name="name" minlength="5" placeholder="Repeat Password" />
+                    </div>
+                    <div class="text-center">
+                      <button type="submit" class="btn btn-primary shadow text-secondary rounded-pill">
+                        Sign Up <i class="fa fa-arrow-right"></i>
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mt-5">
+          <h2 class="bg-secondary ml-md-n5">
             <strong>Want Us to Email You</strong>
           </h2>
           <h2 class="text-primary">
@@ -172,8 +193,8 @@
           </h2>
           <br />
           <div class="input-group">
-            <input id="offer" type="text" class="form-control bg-light font-weight-lighter border-light rounded-pill shadow"
-              placeholder="Email"
+            <input id="offer" type="text"
+              class="form-control bg-light font-weight-lighter border-light rounded-pill shadow" placeholder="Email"
               style="border-top-right-radius: 0 !important; border-bottom-right-radius: 0 !important;" />
             <button class="btn btn-primary rounded-pill shadow input-group-append text-secondary align-items-center"
               style="border-top-left-radius: 0 !important; border-bottom-left-radius: 0 !important;">
@@ -224,8 +245,8 @@
           </ul>
         </div>
       </div>
-      <p class="text-center bg-dark mt-3 text-muted">Designed &amp; developed by <a href="https://rosetech.dev" target="_blank"
-          class="text-primary">Rosetech
+      <p class="text-center bg-dark mt-3 text-muted">Designed &amp; developed by <a href="https://rosetech.dev"
+          target="_blank" class="text-primary">Rosetech
           Solutions Ltd.</a> &copy; <span id="year"></span></p>
     </footer>
   </section>

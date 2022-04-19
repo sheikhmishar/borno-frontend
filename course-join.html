@@ -42,10 +42,11 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav align-items-center">
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle text-center" href="#" role="button" data-toggle="dropdown"
+              aria-expanded="false">
               Dashboard
             </a>
-            <ul class="dropdown-menu bg-secondary border-0 shadow font-size-unset">
+            <ul class="dropdown-menu bg-secondary border-0 shadow font-size-unset text-center">
               <li>
                 <a href="/dashboard/student/calendar.html" class="nav-link">Student</a>
               </li>
@@ -125,51 +126,186 @@
               <hr class="border border-primary mb-4" />
 
               <div class="card-text">
-                <form action="#">
+                <form action="course-join-confirmation.html">
                   <div class="input-group my-3">
                     <button class="btn btn-dark pl-0 input-group-prepend">
                       <i class="fa fa-user-circle text-pink"></i>
                     </button>
                     <input type="text" class="form-control bg-dark border-secondary border-bottom text-secondary"
-                      name="fullname" minlength="6" placeholder="Full Name">
+                      name="fullname" minlength="6" placeholder="Full Name" />
                   </div>
                   <div class="input-group my-3">
                     <button class="btn btn-dark pl-0 input-group-prepend">
                       <i class="fa fa-clock text-blue"></i>
                     </button>
                     <input type="date" class="form-control bg-dark border-secondary border-bottom text-secondary"
-                      name="date" value="11-Jan-1990">
+                      name="date" value="11-Jan-1990" />
                   </div>
                   <div class="input-group my-3">
                     <button class="btn btn-dark pl-0 input-group-prepend">
                       <i class="fa fa-phone text-primary"></i>
                     </button>
                     <input type="tel" class="form-control bg-dark border-secondary border-bottom text-secondary"
-                      name="tel" minlength="6" placeholder="Phone">
+                      name="tel" minlength="6" placeholder="Phone" />
                   </div>
                   <div class="input-group my-3">
                     <button class="btn btn-dark pl-0 input-group-prepend">
                       <i class="fa fa-envelope text-pink"></i>
                     </button>
                     <input type="email" class="form-control bg-dark border-secondary border-bottom text-secondary"
-                      name="email" minlength="6" placeholder="Email">
+                      name="email" minlength="6" placeholder="Email" />
                   </div>
                   <div class="input-group my-3">
                     <button class="btn btn-dark pl-0 input-group-prepend">
                       <i class="fa fa-home text-blue"></i>
                     </button>
                     <input type="text" class="form-control bg-dark border-secondary border-bottom text-secondary"
-                      name="text" minlength="6" placeholder="Address">
+                      name="address" minlength="6" placeholder="Address" />
                   </div>
                   <div class="input-group my-3">
                     <div class="btn btn-dark pl-0 input-group-prepend">
                       <i class="fa fa-book-alt text-primary"></i>
                     </div>
-                    <select class="form-control custom-select bg-dark border-secondary border-bottom text-light" autocomplete="on">
+                    <select name="course"
+                      class="form-control custom-select bg-dark border-secondary border-bottom text-light"
+                      autocomplete="on">
                       <option selected value="ENG101">Fundamentals of English</option>
                       <option value="ENG102">Introduction To Essay</option>
                     </select>
                   </div>
+                  <div class="input-group mt-3">
+                    <div class="btn btn-dark pl-0 input-group-prepend">
+                      <i class="fa fa-signal-4 text-pink"></i>
+                    </div>
+                    <input type="text" disabled class="form-control bg-dark border-0 text-secondary pl-0"
+                      placeholder="Education Level" />
+                  </div>
+                  <div class="text-left pl-5 font-weight-light">
+                    <div class="form-check my-2">
+                      <input class="form-check-input" type="radio" value="8th" name="level" checked />
+                      <label class="form-check-label">
+                        8th Grade
+                      </label>
+                    </div>
+                    <div class="form-check my-2">
+                      <input class="form-check-input" type="radio" value="SSC_O" name="level" />
+                      <label class="form-check-label">
+                        SSC/O-Level
+                      </label>
+                    </div>
+                    <div class="form-check my-2">
+                      <input class="form-check-input" type="radio" value="Bachelors" name="level" />
+                      <label class="form-check-label">
+                        Bachelors
+                      </label>
+                    </div>
+                    <div class="form-check my-2">
+                      <input class="form-check-input" type="radio" value="Masters" name="level" />
+                      <label class="form-check-label">
+                        Masters
+                      </label>
+                    </div>
+                    <div class="form-check my-2">
+                      <input class="form-check-input" type="radio" value="PhD" name="level" />
+                      <label class="form-check-label">
+                        PhD
+                      </label>
+                    </div>
+                    <div class="input-group my-2">
+                      <div class="input-group-prepend font-weight-light">
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" value="other" name="level" />
+                          <label class="form-check-label">
+                            Other
+                          </label>
+                        </div>
+                      </div>
+                      <input type="text" name="other_text"
+                        class="form-control h-100 py-0 ml-2 bg-dark border-bottom border-secondary text-secondary font-weight-light"
+                        placeholder="Education Level" />
+                    </div>
+                  </div>
+
+                  <div class="input-group mt-3">
+                    <div class="btn btn-dark pl-0 input-group-prepend">
+                      <i class="fa fa-couch text-blue"></i>
+                    </div>
+                    <input type="text" disabled class="form-control bg-dark border-0 text-secondary pl-0"
+                      placeholder="Comfort in English">
+                    <div class="form-check input-group-append m-1">
+                      <input class="form-check-input" type="radio" name="eng_skill" value="1" />
+                      <label class="form-check-label">
+                        1
+                      </label>
+                    </div>
+                    <div class="form-check input-group-append m-1">
+                      <input class="form-check-input" type="radio" name="eng_skill" value="2" />
+                      <label class="form-check-label">
+                        2
+                      </label>
+                    </div>
+                    <div class="form-check input-group-append m-1">
+                      <input class="form-check-input" type="radio" name="eng_skill" value="3" />
+                      <label class="form-check-label">
+                        3
+                      </label>
+                    </div>
+                    <div class="form-check input-group-append m-1">
+                      <input class="form-check-input" type="radio" name="eng_skill" value="4" />
+                      <label class="form-check-label">
+                        4
+                      </label>
+                    </div>
+                    <div class="form-check input-group-append m-1">
+                      <input class="form-check-input" type="radio" name="eng_skill" value="5" />
+                      <label class="form-check-label">
+                        5
+                      </label>
+                    </div>
+                  </div>
+                  <div class="input-group mt-3">
+                    <div class="btn btn-dark pl-0 input-group-prepend">
+                      <i class="fa fa-chair-office text-primary mr-1"></i>
+                    </div>
+                    <input type="text" disabled class="form-control bg-dark border-0 text-secondary pl-0"
+                      placeholder="Do you work?">
+                  </div>
+                  <div class="text-left pl-5 font-weight-light">
+                    <div class="form-check my-2">
+                      <input class="form-check-input" type="radio" value="no" name="work" checked />
+                      <label class="form-check-label">
+                        No
+                      </label>
+                    </div>
+                    <div class="input-group my-2">
+                      <div class="input-group-prepend font-weight-light">
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" value="yes" name="work" />
+                          <label class="form-check-label">
+                            Yes
+                          </label>
+                        </div>
+                      </div>
+                      <input type="text" name="work_desc"
+                        class="form-control h-100 py-0 ml-2 bg-dark border-bottom border-secondary text-secondary font-weight-light"
+                        placeholder="Work Description" />
+                    </div>
+                  </div>
+                  <div class="input-group mt-3">
+                    <div class="btn btn-dark pl-0 input-group-prepend">
+                      <i class="fa fa-comment text-pink"></i>
+                    </div>
+                    <textarea type="text" class="form-control bg-dark border-secondary border-bottom text-light"
+                      placeholder="Reasons for Choosing This Course at Borno"></textarea>
+                  </div>
+                  <div class="input-group mt-3">
+                    <div class="btn btn-dark pl-0 input-group-prepend">
+                      <i class="fa fa-bullseye text-blue"></i>
+                    </div>
+                    <textarea type="text" class="form-control bg-dark border-secondary border-bottom text-light"
+                      placeholder="Goals Of Your Life"></textarea>
+                  </div>
+                  <button class="btn btn-primary shadow mt-4 text-secondary" type="submit">Submit</button>
                 </form>
               </div>
             </div>

@@ -42,11 +42,11 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav align-items-center">
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle active" href="#" role="button" data-toggle="dropdown"
+            <a class="nav-link dropdown-toggle text-center active" href="#" role="button" data-toggle="dropdown"
               aria-expanded="false">
               Dashboard
             </a>
-            <ul class="dropdown-menu bg-secondary border-0 shadow font-size-unset">
+            <ul class="dropdown-menu bg-secondary text-center border-0 shadow font-size-unset">
               <li>
                 <a href="/dashboard/student/calendar.html" class="nav-link active">Student</a>
               </li>
@@ -90,7 +90,7 @@
                 <a href="/register.html" class="nav-link">Profile Edit</a>
               </li>
               <li>
-                <a href="#" class="nav-link">Invoices</a>
+                <a href="index.html#t-invoice" id="invoice-nav" class="nav-link">Invoices</a>
               </li>
               <li>
                 <a href="/login.html" class="nav-link">Logout</a>
@@ -134,19 +134,21 @@
               </ul>
             </div>
           </div>
-          <div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
+          <div class="nav flex-column nav-pills" id="tabs" role="tablist">
             <a class="nav-link text-light bg-dark shadow my-1 py-3 rounded h6 active" data-toggle="pill" href="#t-home"
-              role="tab" aria-controls="t-home" aria-selected="true">Home</a>
+              role="tab">Home</a>
             <a class="nav-link text-light bg-dark shadow my-1 py-3 rounded h6" data-toggle="pill" href="#t-class"
-              role="tab" aria-controls="t-class" aria-selected="false">Class</a>
+              role="tab">Class</a>
             <a class="nav-link text-light bg-dark shadow my-1 py-3 rounded h6" data-toggle="pill" href="#t-assignment"
-              role="tab" aria-controls="t-assignment" aria-selected="false">Assignment</a>
+              role="tab">Assignment</a>
             <a class="nav-link text-light bg-dark shadow my-1 py-3 rounded h6" data-toggle="pill" href="#t-grade"
-              role="tab" aria-controls="t-grade" aria-selected="false">Grade</a>
+              role="tab">Grade</a>
             <a class="nav-link text-light bg-dark shadow my-1 py-3 rounded h6" data-toggle="pill" href="#t-announcement"
-              role="tab" aria-controls="t-announcement" aria-selected="false">Announcement</a>
+              role="tab">Announcement</a>
             <a class="nav-link text-light bg-dark shadow my-1 py-3 rounded h6" data-toggle="pill" href="#t-evaluation"
-              role="tab" aria-controls="t-evaluation" aria-selected="false">Evaluation</a>
+              role="tab">Evaluation</a>
+            <a class="nav-link text-light bg-dark shadow my-1 py-3 rounded h6" data-toggle="pill" href="#t-invoice"
+              role="tab">Invoice</a>
           </div>
         </div>
         <div class="col-md-9">
@@ -228,7 +230,8 @@
             <div class="tab-pane fade" id="t-class" role="tabpanel" aria-labelledby="t-class-tab">
               <h3 class="text-primary mb-4">Class</h3>
 
-              <table class="table table-dark shadow table-borderless table-hover table-striped rounded">
+              <table
+                class="table table-dark shadow table-borderless table-hover table-responsive-sm table-striped rounded">
                 <thead>
                   <tr>
                     <th class="border-right border-dark" scope="col">#</th>
@@ -248,7 +251,7 @@
                       <div class="dropleft">
                         <a class="btn btn-outline-warning dropdown-toggle rounded-circle py-1" href="#" role="button"
                           data-toggle="dropdown"></a>
-                        <div class="dropdown-menu bg-dark text-light p-3 w-100 shadow">
+                        <div class="dropdown-menu bg-dark text-light p-3 w-100 shadow border-0">
                           <h6><strong>Topic</strong></h6>
                           <hr class="border-primary" />
                           Introduction to Essay Paraphrasing
@@ -486,6 +489,23 @@
                         Send <i class="fa fa-arrow-right"></i>
                       </button>
                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-pane fade" id="t-invoice" role="tabpanel" aria-labelledby="t-invoice">
+              <h3 class="text-primary mb-4">Invoice</h3>
+
+              <div class="card border-0 bg-dark shadow">
+                <div class="card-body">
+                  <span class="card-title">
+                    Invoice
+                  </span>
+                  <div class="card-text">
+
+
+
                   </div>
                 </div>
               </div>
