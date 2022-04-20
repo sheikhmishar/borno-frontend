@@ -413,9 +413,9 @@ a.nav-link.text-light.btn:focus {
 }
 
 .table tbody tr:nth-child(odd):last-child th:first-child {
-  border-bottom-left-radius: 1.25rem !important;
+  border-bottom-left-radius: var(--border-radius) !important;
 }
 
 .table tbody tr:nth-child(odd):last-child td:last-child {
-  border-bottom-right-radius: 1.25rem !important;
+  border-bottom-right-radius: var(--border-radius) !important;
 }
