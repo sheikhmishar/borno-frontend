@@ -101,6 +101,14 @@ $(window).on("load", function() {
     manageTheme();
   });
 
+  $(".tab-content #t-invoice-pending button.btn.pay-now").click(function() {
+    $('#invoiceTab a[href="#t-invoice-pay-now"]').tab("show");
+  });
+
+  $(".tab-content #t-invoice-pay-now button.btn.payment-confirm").click(function() {
+    $('#invoiceTab a[href="#t-invoice-confirmation"]').tab("show");
+  });
+
   if (
     location.pathname.match(
       /^\/dashboard\/student\/(?:index.(?:(?:php)|(?:html)))?$/gm

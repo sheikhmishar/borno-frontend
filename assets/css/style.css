@@ -149,6 +149,10 @@ section {
   border-color: var(--color-primary);
 }
 
+.btn-primary:disabled {
+  background-color: var(--color-primary-dark);
+}
+
 .btn-blue {
   background-color: var(--color-accent-blue);
   border-color: var(--color-accent-blue);

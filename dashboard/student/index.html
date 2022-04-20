@@ -155,9 +155,9 @@
           <div class="tab-content">
             <div class="tab-pane fade show active" id="t-home" role="tabpanel" aria-labelledby="t-home-tab">
               <h3 class="text-primary">Home</h3>
-              <div class="row">
+              <div class="row card-alternate">
                 <div class="col-md-6 my-3">
-                  <div class="card border-0 bg-dark shadow h-100">
+                  <div class="card border-0 shadow h-100">
                     <div class="card-img-top"
                       style="height: 15rem; background-image: url('/assets/img/banner.jpg'); background-size: cover; background-repeat: no-repeat;">
                     </div>
@@ -173,14 +173,15 @@
                         phoenomeonon.The
                         global games market is currently valued [...]
                       </p>
-                      <a role="button" href="/blogs/[post].html" class="btn btn-primary rounded-pill text-secondary">
+                      <a role="button" href="/blogs/[post].html"
+                        class="btn btn-primary rounded-pill shadow text-secondary">
                         Continue <i class="fa fa-arrow-right"></i>
                       </a>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-6 my-3">
-                  <div class="card border-0 bg-dark shadow h-100">
+                  <div class="card border-0 shadow h-100">
                     <div class="card-img-top"
                       style="height: 15rem; background-image: url('/assets/img/banner.jpg'); background-size: cover; background-repeat: no-repeat;">
                     </div>
@@ -196,14 +197,15 @@
                         phoenomeonon.The
                         global games market is currently valued [...]
                       </p>
-                      <a role="button" href="/blogs/[post].html" class="btn btn-primary rounded-pill text-secondary">
+                      <a role="button" href="/blogs/[post].html"
+                        class="btn btn-primary rounded-pill shadow text-secondary">
                         Continue <i class="fa fa-arrow-right"></i>
                       </a>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-6 my-3">
-                  <div class="card border-0 bg-dark shadow h-100">
+                  <div class="card border-0 shadow h-100">
                     <div class="card-img-top"
                       style="height: 15rem; background-image: url('/assets/img/banner.jpg'); background-size: cover; background-repeat: no-repeat;">
                     </div>
@@ -219,7 +221,8 @@
                         phoenomeonon.The
                         global games market is currently valued [...]
                       </p>
-                      <a role="button" href="/blogs/[post].html" class="btn btn-primary rounded-pill text-secondary">
+                      <a role="button" href="/blogs/[post].html"
+                        class="btn btn-primary rounded-pill shadow text-secondary">
                         Continue <i class="fa fa-arrow-right"></i>
                       </a>
                     </div>
@@ -377,7 +380,7 @@
                           <img src="/assets/img/testimonial_shams.jpg" alt="thumb-test"
                             class="img-fluid rounded-circle fit-cover" height="50px" width="50px" />
                           <div class="d-inline-flex flex-column justify-content-start ml-3">
-                            <h5 class="m-0 text-primary">Shams Arefin</h5>
+                            <h5 class="m-0 text-pink">Shams Arefin</h5>
                             <p class="font-weight-normal m-0">February 10, 2022 | 10.55 AM</p>
                           </div>
                           <p class="ml-auto mr-3">Thank You Sir</p>
@@ -390,7 +393,7 @@
                           <img src="/assets/img/testimonial_shams.jpg" alt="thumb-test"
                             class="img-fluid rounded-circle fit-cover" height="50px" width="50px" />
                           <div class="d-inline-flex flex-column justify-content-start ml-3">
-                            <h5 class="m-0 text-primary">Shams Arefin</h5>
+                            <h5 class="m-0 text-pink">Shams Arefin</h5>
                             <p class="font-weight-normal m-0">February 10, 2022 | 10.55 AM</p>
                           </div>
                           <p class="ml-auto mr-3">Thank You Sir</p>
@@ -420,11 +423,11 @@
                   <span class="card-title">
                     <div class="row">
                       <div class="col-3 d-flex flex-column justify-content-center align-items-center">
-                        <h1 class="text-primary m-0"><strong>3.8</strong></h1>
+                        <h1 class="text-pink m-0"><strong>3.8</strong></h1>
                         <p class="text-primary font-weight-normal m-0"><i class="fa fa-star"></i><i
                             class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
                             class="fa fa-star"></i></p>
-                        <p>Overall Rating</p>
+                        <p class="text-blue">Overall Rating</p>
                       </div>
                       <div class="col-9">
                         <p>
@@ -468,7 +471,7 @@
                           <img src="/assets/img/testimonial_shams.jpg" alt="thumb-test"
                             class="img-fluid rounded-circle fit-cover" height="50px" width="50px" />
                           <div class="d-inline-flex flex-column justify-content-start ml-3">
-                            <h5 class="m-0 text-primary">Shams Arefin</h5>
+                            <h5 class="m-0 text-pink">Shams Arefin</h5>
                             <p class="font-weight-normal m-0">February 10, 2022 | 10.55 AM</p>
                             <p class="text-primary font-weight-normal m-0"><i class="fa fa-star"></i><i
                                 class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
@@ -497,22 +500,175 @@
             <div class="tab-pane fade" id="t-invoice" role="tabpanel" aria-labelledby="t-invoice">
               <h3 class="text-primary mb-4">Invoice</h3>
 
-              <div class="card border-0 bg-dark shadow">
-                <div class="card-body">
-                  <span class="card-title">
-                    Invoice
-                  </span>
-                  <div class="card-text">
+              <ul class="nav nav-pills" id="invoiceTab" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link bg-dark shadow mr-3 py-3 rounded h6 active" data-toggle="pill"
+                    href="#t-invoice-pending" role="tab">Pending</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link d-none" data-toggle="pill" href="#t-invoice-pay-now" role="tab"></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link d-none" data-toggle="pill" href="#t-invoice-confirmation" role="tab"></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link bg-dark shadow mr-3 py-3 rounded h6" data-toggle="pill"
+                    href="#t-previous-transactions" role="tab">Previous
+                    Transactions</a>
+                </li>
+              </ul>
 
-
-
+              <div class="tab-content my-3">
+                <div class="tab-pane fade show active" id="t-invoice-pending" role="tabpanel">
+                  <div class="card bg-dark border-0 shadow col-md-8 my-3">
+                    <div class="card-body">
+                      <h3 class="card-title text-primary my-3">English Expression Course</h3>
+                      <h3 class="card-subtitle text-pink">5000৳</h3>
+                      <h6 class="my-3 text-muted">Total Class: 60</h6>
+                      <button disabled class="btn btn-primary border-0 text-dark rounded-pill mb-3">Pending
+                        Approval</button>
+                    </div>
                   </div>
+                  <div class="card bg-dark border-0 shadow col-md-8 my-3">
+                    <div class="card-body">
+                      <h3 class="card-title text-primary my-3">English Expression Course</h3>
+                      <h3 class="card-subtitle text-pink">5000৳</h3>
+                      <h6 class="my-3 text-muted">Total Class: 60</h6>
+                      <button class="btn btn-blue shadow border-0 text-dark rounded-pill mb-3 pay-now">Pay Now</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="t-invoice-pay-now" role="tabpanel">
+                  <table class="table table-dark shadow table-hover table-borderless rounded">
+                    <tbody>
+                      <tr class="border-bottom border-primary">
+                        <th colspan="2">
+                          <h2 class="text-pink text-center">Order Confirm</h2>
+                        </th>
+                      </tr>
+                      <tr class="border-bottom border-primary">
+                        <th class="text-blue">
+                          <h5>Course Name</h5>
+                        </th>
+                        <td>English Expression Course</td>
+                      </tr>
+                      <tr class="border-bottom border-primary">
+                        <th class="text-blue">
+                          <h5>Total Class</h5>
+                        </th>
+                        <td>60</td>
+                      </tr>
+                      <tr class="border-bottom border-primary">
+                        <th class="text-blue">
+                          <h5>Total Amount</h5>
+                        </th>
+                        <td>5000৳</td>
+                      </tr>
+                      <tr class="border-bottom border-primary">
+                        <th class="text-blue">
+                          <h5>Reference Number</h5>
+                        </th>
+                        <td>LB364353ds654</td>
+                      </tr>
+                      <tr>
+                        <th class="text-blue">
+                          <h5>Payment Method</h5>
+                        </th>
+                        <td>
+                          <div class="input-group">
+                            <div class="form-check input-group-append m-1">
+                              <input class="form-check-input" type="radio" name="payment-method" value="cash" checked />
+                              <label class="form-check-label">
+                                Cash
+                              </label>
+                            </div>
+                            <div class="form-check input-group-append m-1">
+                              <input class="form-check-input" type="radio" name="payment-method" value="online" />
+                              <label class="form-check-label">
+                                Online
+                              </label>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <button class="btn btn-primary shadow rounded-pill mb-3 text-dark payment-confirm btn-block">Payment
+                    Confirm</button>
+                </div>
+                <div class="tab-pane fade" id="t-invoice-confirmation" role="tabpanel">
+                  <div class="card p-3 bg-dark border-0 shadow-sm">
+                    <div class="card-body">
+                      <h4 class="card-title text-center">
+                        <strong>
+                          Course Payment Confirmation
+                        </strong>
+                      </h4>
+                      <hr class="border border-primary mb-4" />
+                      <p>Thanks for applying for this course. Our agent will contact you for payment information</p>
+                      <a class="btn btn-primary btn-block rounded-pill shadow mt-4 text-secondary" type="submit"
+                        onclick="location.reload()">Go to
+                        Dashboard</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="t-previous-transactions" role="tabpanel">
+                  <table
+                    class="table table-dark shadow table-borderless table-hover table-striped table-responsive-xl rounded">
+                    <thead>
+                      <tr>
+                        <th class="border-right border-dark" scope="col">#</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Course Name</th>
+                        <th scope="col">Payment Method</th>
+                        <th scope="col">Invoice No.</th>
+                        <th scope="col">Total Amount</th>
+                        <th scope="col">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th class="border-right border-dark" scope="row">1</th>
+                        <td>02/04/2022</td>
+                        <td>English Expression Course</td>
+                        <td>
+                          <p>Cash Payment</p>
+                          <p class="text-pink font-weight-normal mt-n2">Our agent will contact you with payment
+                            instructions</p>
+                        </td>
+                        <td>LB364353ds654</td>
+                        <td>5000.00৳</td>
+                        <td><span class="text-warning">Pending</span></td>
+                      </tr>
+                      <tr>
+                        <th class="border-right border-dark" scope="row">2</th>
+                        <td>09/04/2022</td>
+                        <td>English Expression Course</td>
+                        <td>
+                          <p>Cash Payment</p>
+                        </td>
+                        <td>LB3644lj3ds654</td>
+                        <td>5000.00৳</td>
+                        <td><span class="text-success">Paid</span></td>
+                      </tr>
+                      <tr>
+                        <th class="border-right border-dark" scope="row">3</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
     </div>
   </section>
 
