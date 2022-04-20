@@ -41,11 +41,11 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav align-items-center">
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-center active" href="#" role="button" data-toggle="dropdown"
+            <a class="nav-link dropdown-toggle active text-center" href="#" role="button" data-toggle="dropdown"
               aria-expanded="false">
               Dashboard
             </a>
-            <ul class="dropdown-menu bg-secondary text-center border-0 shadow font-size-unset">
+            <ul class="dropdown-menu bg-secondary border-0 shadow font-size-unset text-center">
               <li>
                 <a href="/dashboard/student/calendar.html" class="nav-link active">Student</a>
               </li>
@@ -89,9 +89,6 @@
                 <a href="/register.html" class="nav-link">Profile Edit</a>
               </li>
               <li>
-                <a href="index.html#t-invoice" class="nav-link">Invoices</a>
-              </li>
-              <li>
                 <a href="/login.html" class="nav-link">Logout</a>
               </li>
             </ul>
@@ -105,7 +102,6 @@
       </div>
     </div>
   </nav>
-
 
   <section class="bg-secondary mt-4 pb-4">
     <div class="container">
@@ -165,7 +161,7 @@
               </div>
             </div>
           </a><br>
-          <h6 class="text-center"><a href="#" style="text-decoration: none; color: #fcc93a;">+ Add Task</a>
+          <h6 class="text-center add-task"><a href="#">+ Add Task</a>
           </h6>
         </div>
         <div class="col-md-8 my-5">
@@ -174,11 +170,11 @@
               <span class="month-picker" id="month-picker"></span>
               <div class="year-picker">
                 <span class="year-change" id="prev-year">
-                  <pre style="color: white;"><</pre>
+                  <pre class="text-light">&lt;</pre>
                 </span>
-                <span id="year"></span>
+                <span id="year" class="text-light"></span>
                 <span class="year-change" id="next-year">
-                  <pre style="color: white;">></pre>
+                  <pre class="text-light">&gt;</pre>
                 </span>
               </div>
             </div>
@@ -201,12 +197,12 @@
     </div>
   </section>
 
-  <section class="bg-secondary border-bottom border-dark">
+  <section class="bg-secondary">
     <div class="container">
       <h2 class="text-center text-primary">My Courses</h2>
       <div class="row my-5" style="padding: 10px;">
         <div class="bg-dark col-md-5 col-lg-5 my-5 position-relative" style="border-radius: 30px; margin: 15px;">
-          <img src="/assets/img/banner_about_us.jpg" class="img-fluid" alt="Responsive image"
+          <img src="/assets/img/banner.jpg" class="img-fluid" alt="Responsive image"
             style="border-radius: 15px; margin-top: 15px; margin-bottom: 30px;">
           <h2 class="text-reset">Strategic Social Media and Evolution of Visual</h2>
           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia nam impedit expedita error
@@ -219,7 +215,7 @@
         <div class="col-md-1 col-lg-1 my-1">
         </div>
         <div class="bg-dark col-md-5 col-lg-5 my-5 position-relative" style="border-radius: 30px; margin:15px;">
-          <img src="/assets/img/banner_about_us.jpg" class="img-fluid" alt="Responsive image"
+          <img src="/assets/img/banner.jpg" class="img-fluid" alt="Responsive image"
             style="border-radius: 15px; margin-top: 15px; margin-bottom: 30px;">
           <h2 class="text-reset">Strategic Social Media and Evolution of Visual</h2>
           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia nam impedit expedita error
@@ -230,20 +226,10 @@
           </a><br>
         </div>
       </div>
-      <div class="row my-5" style="padding-left: 15px; padding-right: 40px;">
-        <div class="bg-dark col-md-12 col-lg-12 my-12 position-relative" style="border-radius: 30px; padding: 20px;">
-          <h2 class="text-primary">RECENT POSTS</h2>
-          <div class="text-primary">____________________________________________</div>
-          <br>
-          <div style="padding-left: 20px;">
-          </div>
-        </div>
-
-      </div>
     </div>
   </section>
 
-  <section style="background-color: rgb(49, 46, 46);">
+  <section class="bg-dark pb-4">
     <footer class="container">
       <div class="row">
         <div class="col-md-5">
@@ -282,6 +268,9 @@
           </ul>
         </div>
       </div>
+      <p class="text-center bg-dark mt-3 text-muted">Designed &amp; developed by <a href="https://rosetech.dev"
+          target="_blank" class="text-primary">Rosetech
+          Solutions Ltd.</a> &copy; <span id="year"></span></p>
     </footer>
   </section>
 

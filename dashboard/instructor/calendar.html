@@ -45,7 +45,7 @@
               aria-expanded="false">
               Dashboard
             </a>
-            <ul class="dropdown-menu bg-secondary border-0 text-center shadow font-size-unset">
+            <ul class="dropdown-menu bg-secondary border-0 shadow font-size-unset text-center">
               <li>
                 <a href="/dashboard/student/calendar.html" class="nav-link">Student</a>
               </li>
@@ -66,7 +66,7 @@
             </div>
           </li>
         </ul>
-        <ul class="navbar-nav ml-md-auto my-3 my-md-0">
+        <ul class="navbar-nav ml-md-auto my-3 my-md-0 align-items-md-center">
           <li class="nav-item">
             <a href="/courses.html" class="nav-link">Courses</a>
           </li>
@@ -79,10 +79,21 @@
           <li class="nav-item">
             <a href="/blogs/" class="nav-link">Blog</a>
           </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+              <img src="/assets/img/testimonial_shams.jpg" alt="thumb-test" class="img-fluid rounded-circle fit-cover"
+                height="45px" width="45px" />
+            </a>
+            <ul class="dropdown-menu bg-secondary border-0 shadow font-size-unset">
+              <li>
+                <a href="/register.html" class="nav-link">Profile Edit</a>
+              </li>
+              <li>
+                <a href="/login.html" class="nav-link">Logout</a>
+              </li>
+            </ul>
+          </li>
         </ul>
-        <a href="/login.html" role="button" class="btn btn-primary rounded-pill shadow text-secondary font-size-unset mb-3 mb-md-0">
-          Login
-        </a>
         <ul class="navbar-nav my-3 my-md-0 d-none d-md-inline">
           <li class="nav-item">
             <a href="#" class="nav-link" id="dark-toggler"><i class="fa fa-moon"></i></a>
@@ -122,60 +133,53 @@
             <div class="card-body p-3">
               <div class="card-text d-flex justify-content-between">
                 <div>
-                  <h5>Course Name</h5>
-                  Teacher's Name
+                  <h5>Course Name</h5>Teacher's Name
                 </div>
                 <div>
                   <h5>2:20 PM</h5>
                 </div>
               </div>
             </div>
-          </a><br />
+          </a><br>
           <a href="./" class="card bg-secondary shadow text-light" style="border-radius: 30px;">
             <div class="card-body p-3">
               <div class="card-text d-flex justify-content-between">
                 <div>
-                  <h5>Course Name</h5>
-                  Teacher's Name
+                  <h5>Course Name</h5>Teacher's Name
                 </div>
                 <div>
                   <h5>4:20 PM</h5>
                 </div>
               </div>
             </div>
-          </a><br />
+          </a><br>
           <a href="./" class="card bg-secondary shadow text-light" style="border-radius: 30px;">
             <div class="card-body p-3">
               <div class="card-text d-flex justify-content-between">
                 <div>
-                  <h5>Assignment Name</h5>
-                  Teacher's Name
+                  <h5>Assignment Name</h5>Teacher's Name
                 </div>
                 <div>
                   <h5>6:20 PM</h5>
                 </div>
               </div>
             </div>
-          </a><br />
-          <h6 class="text-center">
-            <a href="#" style="text-decoration: none; color: #fcc93a;">+ Add Task</a>
+          </a><br>
+          <h6 class="text-center add-task"><a href="#">+ Add Task</a>
           </h6>
         </div>
         <div class="col-md-8 my-5">
           <div class="calendar">
             <div class="calendar-header">
-              <span class="month-picker" id="month-picker"></span>
-              <div class="year-picker">
-                <span class="year-change" id="prev-year">
-                  <pre style="color: white;"><</pre>
-                </span>
-                <span id="year"></span>
-                <span class="year-change" id="next-year">
-                  <pre style="color: white;">></pre>
-                </span>
-              </div>
+              <span class="month-picker" id="month-picker"></span><span id="full-date"></span>
+              <span id="year"></span>
+              <select name="selection" id="selection">
+                <option value="calendar-body" selected>This Month</option>
+                <option value="week-calender">This Week</option>
+                <option value="day-calender">Today</option>
+              </select>
             </div>
-            <div class="calendar-body">
+            <div class="calendar-body details">
               <div class="calendar-week-day">
                 <div>Sun</div>
                 <div>Mon</div>
@@ -187,6 +191,14 @@
               </div>
               <div class="calendar-days"></div>
             </div>
+            <div class="week-calender details">
+              <table id="week-calender-table">
+              </table>
+            </div>
+            <div class="day-calender details">
+              <table id="day-calender-table">
+              </table>
+            </div>
             <div class="month-list"></div>
           </div>
         </div>
@@ -194,12 +206,13 @@
     </div>
   </section>
 
-  <section class="bg-secondary border-bottom border-dark">
+
+  <section class="bg-secondary">
     <div class="container">
       <h2 class="text-center text-primary">My Courses</h2>
       <div class="row my-5" style="padding: 10px;">
         <div class="bg-dark col-md-5 col-lg-5 my-5 position-relative" style="border-radius: 30px; margin: 15px;">
-          <img src="/assets/img/banner_about_us.jpg" class="img-fluid" alt="Responsive image"
+          <img src="/assets/img/banner.jpg" class="img-fluid" alt="Responsive image"
             style="border-radius: 15px; margin-top: 15px; margin-bottom: 30px;" />
           <h2 class="text-reset">
             Strategic Social Media and Evolution of Visual
@@ -215,7 +228,7 @@
         </div>
         <div class="col-md-1 col-lg-1 my-1"></div>
         <div class="bg-dark col-md-5 col-lg-5 my-5 position-relative" style="border-radius: 30px; margin:15px;">
-          <img src="/assets/img/banner_about_us.jpg" class="img-fluid" alt="Responsive image"
+          <img src="/assets/img/banner.jpg" class="img-fluid" alt="Responsive image"
             style="border-radius: 15px; margin-top: 15px; margin-bottom: 30px;" />
           <h2 class="text-reset">
             Strategic Social Media and Evolution of Visual
@@ -230,37 +243,21 @@
             Continue </a><br />
         </div>
       </div>
-      <div class="row my-5" style="padding-left: 15px; padding-right: 40px;">
-        <div class="bg-dark col-md-12 col-lg-12 my-12 position-relative" style="border-radius: 30px; padding: 20px;">
-          <h2 class="text-primary">RECENT POSTS</h2>
-          <div class="text-primary">
-            ____________________________________________
-          </div>
-          <br />
-          <div style="padding-left: 20px;"></div>
-        </div>
-      </div>
     </div>
   </section>
 
-  <section style="background-color: rgb(49, 46, 46);">
+  <section class="bg-dark pb-4">
     <footer class="container">
       <div class="row">
         <div class="col-md-5">
           <img src="/assets/img/logo.png" alt="borno" class="img-fluid mb-3" style="height: 5rem;" />
           <ul class="list-unstyled">
-            <li>
-              <i class="fa fa-phone text-primary"></i>
-              <a href="tel:+8801XXXXXX" class="text-light">+8801XXXXXX</a>
+            <li><i class="fa fa-phone text-blue"></i> <a href="tel:+8801XXXXXX" class="text-light">+8801XXXXXX</a>
             </li>
-            <li>
-              <i class="fa fa-envelope text-primary"></i>
-              <a href="mailto:info@learnborno.com" class="text-light">info@learnborno.com</a>
-            </li>
-            <li>
-              <i class="fab fa-internet-explorer text-primary"></i>
-              <a href="https://www.learnborno.com" class="text-light">www.learnborno.com</a>
-            </li>
+            <li><i class="fa fa-envelope text-pink"></i> <a href="mailto:info@learnborno.com"
+                class="text-light">info@learnborno.com</a></li>
+            <li><i class="fab fa-internet-explorer text-primary"></i> <a href="https://www.learnborno.com"
+                class="text-light">www.learnborno.com</a></li>
           </ul>
         </div>
         <div class="col-md-2">
@@ -274,9 +271,7 @@
         <div class="col-md-3">
           <h5 class="text-pink"><strong>Popular Courses</strong></h5>
           <ul class="list-unstyled mt-4">
-            <li>
-              <a href="/course-details.html" class="text-light">English Expression Course</a>
-            </li>
+            <li><a href="/course-details.html" class="text-light">English Expression Course</a></li>
             <li><a href="/courses.html" class="text-light">Explore Courses</a></li>
             <li><a href="/login.html" class="text-light">Login</a></li>
           </ul>
@@ -290,6 +285,9 @@
           </ul>
         </div>
       </div>
+      <p class="text-center bg-dark mt-3 text-muted">Designed &amp; developed by <a href="https://rosetech.dev"
+          target="_blank" class="text-primary">Rosetech
+          Solutions Ltd.</a> &copy; <span id="year"></span></p>
     </footer>
   </section>
 
