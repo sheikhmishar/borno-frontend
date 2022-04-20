@@ -20,7 +20,7 @@ $(window).on("load", function() {
   var footerImage = $("footer img");
   var blogSidebarCards = $(".blog-sidebar .card");
   var blogSidebarInputs = $(".blog-sidebar input.form-control");
-  var formControls = $("input.form-control:not(#offer)");
+  var formControls = $("input.form-control:not(#offer), textarea.form-control:not(#offer)");
   var customSelect = $(".custom-select");
   var bannerImage = $("#banner");
   var getStarted = $("#get-started");
