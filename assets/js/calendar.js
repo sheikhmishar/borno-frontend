@@ -107,6 +107,7 @@ generateCalendar = (month, year, important_days) => {
           day.innerHTML += `<p class="dropdown-menu z-index-99 bg-dark text-light p-2 w-25">
                       Tasks<br>${imp_date["message"]}<br>qjhcvuyvebw
                       </p>`;
+          day.onclick = imp_date.onclick
         }
       }
     }
@@ -122,7 +123,7 @@ month_names.forEach((e, index) => {
   month.querySelector("div").onclick = () => {
     month_list.classList.remove("show");
     curr_month.value = index;
-    generateCalendar(index, curr_year.value);
+    generateCalendar(index, curr_year.value, task_days);
   };
   month_list.appendChild(month);
 });
@@ -139,12 +140,22 @@ let curr_month = { value: currDate.getMonth() };
 let curr_year = { value: currDate.getFullYear() };
 
 let task_days = [
-  { year: 2022, month: 4, date: 10, message: "whatever" },
-  { year: 2022, month: 4, date: 15, message: "whatever" },
-  { year: 2022, month: 4, date: 26, message: "New Kaaaaj" }
+  { year: 2022, month: 4, date: 10, message: "whatever", onclick: console.log('clicked') },
+  { year: 2022, month: 4, date: 15, message: "whatever", onclick: console.log('clicked') },
+  { year: 2022, month: 4, date: 26, message: "New Kaaaaj", onclick: console.log('clicked') }
 ];
 
-generateCalendar(curr_month.value, 2022, task_days);
+generateCalendar(curr_month.value, curr_year.value, task_days);
+
+document.querySelector("#prev-year").onclick = () => {
+  --curr_year.value;
+  generateCalendar(curr_month.value, curr_year.value, task_days);
+};
+
+document.querySelector("#next-year").onclick = () => {
+  ++curr_year.value;
+  generateCalendar(curr_month.value, curr_year.value, task_days);
+};
 
 // WeeklyCalender
 days = ["Sun", "Mon", "Tues", "Wed", "Thu", "Fri", "Sat"];

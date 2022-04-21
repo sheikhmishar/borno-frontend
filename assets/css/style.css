@@ -6,12 +6,14 @@
   --color-text-secondary: #222;
   --color-accent-pink: #ec7185;
   --color-accent-blue: #6abff0;
+  --bg-ball-secondary: rgba(255, 255, 255, 0.05);
   --border-radius: 1.25rem;
 }
 
 body.theme-light {
   --color-bg: #f8f8f8;
   --color-bg-dark: #eeeeee;
+  --bg-ball-secondary: #fff;
 }
 
 @font-face {
@@ -108,6 +110,10 @@ section {
 
 .z-index-99 {
   z-index: 99 !important;
+}
+
+.z-index-n1 {
+  z-index: -1 !important;
 }
 
 .position-fill {
@@ -259,6 +265,10 @@ section {
 
 .bg-pink {
   background-color: var(--color-accent-pink) !important;
+}
+
+.bg-ball-secondary {
+  background-color: var(--bg-ball-secondary);
 }
 
 a.text-primary:hover,
