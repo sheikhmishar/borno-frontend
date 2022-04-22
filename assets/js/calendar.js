@@ -1,7 +1,4 @@
-// calendar
-const calendar = document.querySelector(".calendar");
-
-const month_names = [
+const MONTHS = [
   "January",
   "February",
   "March",
@@ -15,6 +12,8 @@ const month_names = [
   "November",
   "December"
 ];
+
+const days = ["Sun", "Mon", "Tues", "Wed", "Thu", "Fri", "Sat"];
 
 const isLeapYear = (/** @type {number} */ year) =>
   (year % 4 === 0 && year % 100 !== 0 && year % 400 !== 0) ||
@@ -37,226 +36,228 @@ const daysOfMonth = (/** @type {number} */ year) => [
   31
 ];
 
+const currDate = new Date(),
+  currMonth = currDate.getMonth(),
+  currDayOfMonth = currDate.getDate(),
+  currWeekDay = currDate.getDay(),
+  currYear = currDate.getFullYear(),
+  currMonthDayCount = daysOfMonth(currYear)[currMonth];
+
 /**
  * @typedef {{
  *    year: number,
  *    month: number,
  *    date: number,
  *    message: string,
- *    onclick: () => void
- * }} ImportantDay
+ *    setClickListener: () => void
+ * }} Task
  *  */
-/** @type {ImportantDay[]} */
-const task_days = [
+/** @type {Task[]} */
+const tasks = [
   {
     year: 2022,
     month: 4,
     date: 10,
     message: "whatever",
-    onclick: () => console.log("clicked 1")
+    // TODO: multiple tasks in one day
+    setClickListener() {
+      console.log("clicked", this);
+    }
   },
   {
     year: 2022,
     month: 4,
     date: 15,
-    message: "whatever",
-    onclick: () => console.log("clicked 2")
+    message: "study",
+    setClickListener: function() {
+      console.log("clicked 2", this);
+    }
+  },
+  {
+    year: 2022,
+    month: 3,
+    date: 15,
+    message: "march",
+    setClickListener: () => {
+      console.log("clicked 5");
+    }
   },
   {
     year: 2022,
     month: 4,
     date: 26,
     message: "New Kaaaaj",
-    onclick: () => console.log("clicked 3")
+    setClickListener: function() {
+      console.log("clicked 3");
+    }
   }
 ];
 
 $(window).on("load", function() {
-  $("#preloader").fadeOut();
+  /** @type {HTMLElement} */
+  const calendar = document.querySelector(".calendar");
 
-  var divYear = $("#year"),
-    year = new Date().getFullYear().toString();
-  if (year != "2021") divYear.text("".concat(year));
-  else divYear.text(year);
+  const monthListElem = calendar.querySelector(".month-list");
+
+  /** @type {HTMLDivElement} */
+  const monthPickerElem = calendar.querySelector("#month-picker");
+  monthPickerElem.onclick = () => monthListElem.classList.add("show");
 
   /**
    * @param {number} month
    * @param {number} year
-   * @param {ImportantDay[]} important_days
+   * @param {Task[]} tasks
    */
-  const generateCalendar = (month, year, important_days) => {
-    const calendar_days = calendar.querySelector(".calendar-days");
-    const calendar_header_year = calendar.querySelector("#year");
-    const days_of_month = daysOfMonth(year);
+  const generateCalendar = (month = currMonth, year = currYear, tasks = []) => {
+    /** @type {HTMLElement} */
+    const calDaysElem = calendar.querySelector(".calendar-days"),
+      /** @type {HTMLElement} */
+      calYearElem = calendar.querySelector("#cal-year"),
+      daysCount = daysOfMonth(year),
+      firstDay = new Date(year, month, 1).getDay();
 
-    calendar_days.innerHTML = "";
+    calDaysElem.innerText = "";
+    monthPickerElem.innerText = MONTHS[month];
+    calYearElem.innerText = year.toString();
 
-    const currDate = new Date();
-    if (!month) month = currDate.getMonth();
-    if (!year) year = currDate.getFullYear();
+    for (let i = 0; i < daysCount[month] + firstDay; i++) {
+      const dayDiv = document.createElement("div");
+      calDaysElem.appendChild(dayDiv);
 
-    const curr_month = `${month_names[month]}`;
-    month_picker.innerHTML = curr_month;
-    calendar_header_year.innerHTML = year.toString();
+      if (i < firstDay) continue;
 
-    // get first day of month
-    const first_day = new Date(year, month, 1);
+      const date = i + 1 - firstDay;
+      dayDiv.innerHTML = /*html*/ `<a dd="DD">${date}</a>`;
 
-    for (let i = 0; i <= days_of_month[month] + first_day.getDay() - 1; i++) {
-      const day = document.createElement("div");
-      if (i >= first_day.getDay()) {
-        day.innerHTML = /* html */ `
-        <a data-toggle="DD">${i - first_day.getDay() + 1}</a>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>`;
-        if (
-          i - first_day.getDay() + 1 === currDate.getDate() &&
-          year === currDate.getFullYear() &&
-          month === currDate.getMonth()
-        )
-          day.classList.add("curr-date");
-        else
-          for (const imp_date of important_days)
-            if (
-              i - first_day.getDay() + 1 == imp_date.date &&
-              year == imp_date.year &&
-              month + 1 == imp_date.month
-            ) {
-              day.classList.add("dropup");
-              day.classList.add("imp-date");
-              day.innerHTML = day.innerHTML.replace(
-                'data-toggle="DD"',
-                'data-toggle="dropdown"'
-              );
-            }
-
-        for (const imp_date of important_days) {
+      if (date === currDayOfMonth && year === currYear && month === currMonth)
+        dayDiv.classList.add("curr-date");
+      else
+        for (const task of tasks)
           if (
-            i - first_day.getDay() + 1 == imp_date.date &&
-            year == imp_date.year &&
-            month + 1 == imp_date.month
+            date === task.date &&
+            year === task.year &&
+            month === task.month - 1
           ) {
-            day.innerHTML += `<p class="dropdown-menu z-index-99 bg-dark text-light p-2 w-25">
-                      Tasks<br>${imp_date["message"]}<br>qjhcvuyvebw
-                      </p>`;
-            day.onclick = imp_date.onclick;
+            dayDiv.classList.add("dropup");
+            dayDiv.classList.add("imp-date");
+            dayDiv.innerHTML = dayDiv.innerHTML.replace(
+              'dd="DD"',
+              'data-toggle="dropdown"'
+            );
           }
+
+      for (const task of tasks)
+        if (date == task.date && year == task.year && month == task.month - 1) {
+          dayDiv.innerHTML += /*html*/ `
+            <p class="dropdown-menu p-2">
+              Tasks<br/>${task.message}
+            </p>
+          `;
+          dayDiv.onclick = task.setClickListener;
         }
-      }
-      calendar_days.appendChild(day);
     }
   };
 
-  const month_list = calendar.querySelector(".month-list");
+  let pickedMonth = currMonth;
+  let pickedYear = currYear;
 
-  month_names.forEach((e, index) => {
-    const month = document.createElement("div");
-    month.innerHTML = `<div data-month="${index}">${e}</div>`;
-    month.querySelector("div").onclick = () => {
-      if (month_list) month_list.classList.remove("show");
-      curr_month.value = index;
-      generateCalendar(index, curr_year.value, task_days);
+  MONTHS.forEach((month, index) => {
+    const monthElem = document.createElement("div");
+    monthListElem.appendChild(monthElem);
+
+    monthElem.innerHTML = /*html*/ `<div data-month="${index}">${month}</div>`;
+    monthElem.querySelector("div").onclick = () => {
+      monthListElem.classList.remove("show");
+      pickedMonth = index;
+      generateCalendar(index, pickedYear, tasks);
     };
-    if (month_list) month_list.appendChild(month);
   });
+  generateCalendar(pickedMonth, pickedYear, tasks);
 
   /** @type {HTMLDivElement} */
-  const month_picker = calendar.querySelector("#month-picker");
-  if (month_picker)
-    month_picker.onclick = () => month_list && month_list.classList.add("show");
-
-  const currDate = new Date();
-  const curr_month = { value: currDate.getMonth() };
-  const curr_year = { value: currDate.getFullYear() };
-
-  generateCalendar(curr_month.value, curr_year.value, task_days);
+  (document.querySelector("#prev-year")).onclick = () =>
+    generateCalendar(pickedMonth, --pickedYear, tasks);
 
   /** @type {HTMLDivElement} */
-  const prevYear = document.querySelector("#prev-year");
-  if (prevYear)
-    prevYear.onclick = () =>
-      generateCalendar(curr_month.value, --curr_year.value, task_days);
+  (document.querySelector("#next-year")).onclick = () =>
+    generateCalendar(pickedMonth, ++pickedYear, tasks);
 
-  /** @type {HTMLDivElement} */
-  const nextYear = document.querySelector("#next-year");
-  if (nextYear)
-    nextYear.onclick = () =>
-      generateCalendar(curr_month.value, ++curr_year.value, task_days);
-
-  // Weeklycalendar
-  const days = ["Sun", "Mon", "Tues", "Wed", "Thu", "Fri", "Sat"];
-  const currMonth = currDate.getMonth();
-  let curr_day = currDate.getDay();
-  let curr_date = currDate.getDate();
-
-  const newTR = document.createElement("tr");
-  newTR.appendChild(document.createElement("th"));
-  console.log(curr_month);
-  for (let k = 0; k < 7; k++) {
-    let newTH = document.createElement("th");
-    if (curr_date % daysOfMonth[currMonth] == 0) {
-      newTH.appendChild(
-        document.createTextNode(
-          curr_date.toString() + " - " + days[curr_day % 7]
-        )
-      );
-    } else {
-      newTH.appendChild(
-        document.createTextNode(
-          (curr_date % daysOfMonth[currMonth]).toString() +
-            " - " +
-            days[curr_day % 7]
-        )
-      );
-    }
-    newTR.appendChild(newTH);
-    curr_date++;
-    curr_day++;
-  }
   const weekCalendarTable = document.getElementById("week-calendar-table");
-  if (weekCalendarTable) weekCalendarTable.appendChild(newTR);
-  console.log(curr_date);
-  console.log(curr_day);
-  let hour = 1;
-  for (let i = 1; i <= 27; i++) {
-    let newTR = document.createElement("tr");
-    for (let j = 1; j <= 8; j++) {
-      let newTD = document.createElement("td");
-      if (i % 3 == 1 && j == 1) {
-        newTD.appendChild(document.createTextNode(hour.toString() + " PM"));
-        hour++;
+  if (weekCalendarTable) {
+    /** @type {HTMLTableRowElement} */
+    let weekDayNameRowElem,
+      date = currDayOfMonth,
+      day = currWeekDay;
+
+    weekDayNameRowElem = document.createElement("tr");
+    weekCalendarTable.appendChild(weekDayNameRowElem);
+    weekDayNameRowElem.appendChild(document.createElement("th"));
+
+    for (let i = 0; i < 7; i++, day++, date++) {
+      const dayNameHeaderElem = document.createElement("th");
+      weekDayNameRowElem.appendChild(dayNameHeaderElem);
+
+      if (date % currMonthDayCount == 0)
+        dayNameHeaderElem.innerText = String(date);
+      else dayNameHeaderElem.innerText = String(date % currMonthDayCount);
+    }
+
+    weekDayNameRowElem = document.createElement("tr");
+    weekCalendarTable.appendChild(weekDayNameRowElem);
+    weekDayNameRowElem.appendChild(document.createElement("th"));
+    date = currDayOfMonth;
+    day = currWeekDay;
+    for (let i = 0; i < 7; i++, day++, date++) {
+      const dayNameHeaderElem = document.createElement("th");
+      weekDayNameRowElem.appendChild(dayNameHeaderElem);
+
+      dayNameHeaderElem.innerText = days[day % 7];
+    }
+
+    for (let hour = 0; hour < 24; hour++) {
+      const rowElem = document.createElement("tr");
+      weekCalendarTable.appendChild(rowElem);
+
+      let dataElem = document.createElement("td");
+      rowElem.appendChild(dataElem);
+
+      if (hour === 0) dataElem.innerText = "12 AM";
+      else if (hour === 12) dataElem.innerText = "12 PM";
+      else if (hour < 12) dataElem.innerText = String(hour % 12).concat(" AM");
+      else dataElem.innerText = String(hour % 12).concat(" PM");
+
+      for (let weekDay = 0; weekDay < 7; weekDay++) {
+        dataElem = document.createElement("td");
+        rowElem.appendChild(dataElem);
       }
-      newTR.appendChild(newTD);
     }
-    if (weekCalendarTable) weekCalendarTable.appendChild(newTR);
   }
-  // Day calendar
-  hour = 1;
+
   const dayCalendarTable = document.getElementById("day-calendar-table");
-  if (dayCalendarTable) dayCalendarTable.appendChild(newTR);
-  for (let i = 1; i <= 27; i++) {
-    const newTR = document.createElement("tr");
-    for (let j = 1; j <= 2; j++) {
-      const newTD = document.createElement("td");
-      if (i % 3 == 1 && j == 1)
-        newTD.appendChild(document.createTextNode((hour++).toString() + " PM"));
-      newTR.appendChild(newTD);
-    }
-    if (dayCalendarTable) dayCalendarTable.appendChild(newTR);
+
+  for (let hour = 0; dayCalendarTable && hour < 24; hour++) {
+    const rowElem = document.createElement("tr");
+    dayCalendarTable.appendChild(rowElem);
+
+    /** @type {HTMLTableDataCellElement} */
+    let dataElem;
+
+    dataElem = document.createElement("td");
+    rowElem.appendChild(dataElem);
+
+    if (hour === 0) dataElem.innerText = "12 AM";
+    else if (hour === 12) dataElem.innerText = "12 PM";
+    else if (hour < 12) dataElem.innerText = String(hour % 12).concat(" AM");
+    else dataElem.innerText = String(hour % 12).concat(" PM");
+
+    dataElem = document.createElement("td");
+    rowElem.appendChild(dataElem);
   }
 
   $(".week-calendar").hide();
   $(".day-calendar").hide();
-  $(document).ready(function() {
-    $("#selection").change(function() {
-      var name = $("#selection").val();
-      $(".details").hide();
-      $("." + name).show();
-    });
+  $("#selection").change(function() {
+    $(".details").hide();
+    $(String(".").concat($("#selection").val())).show();
   });
-  // $("#year").hide();
-  // $("#month-picker").hide();
-  // FIXME: JANUARY DOESNT WORK
 });
