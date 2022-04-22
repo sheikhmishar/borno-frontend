@@ -120,7 +120,7 @@
 
   <section class="bg-dark border-bottom border-dark">
     <div class="container">
-      <h6 class="text-center">Calender</h6>
+      <h6 class="text-center">calendar</h6>
       <h2 class="text-center text-primary">Upcoming Classes & Assignments</h2>
 
       <div class="row my-5">
@@ -171,12 +171,20 @@
         <div class="col-md-8 my-5">
           <div class="calendar">
             <div class="calendar-header">
-              <span class="month-picker" id="month-picker"></span><span id="full-date"></span>
-              <span id="year"></span>
+              <span class="month-picker" id="month-picker"></span>
+              <div class="year-picker">
+                <span class="year-change" id="prev-year">
+                  &lt;
+                </span>
+                <span id="year"></span>
+                <span class="year-change" id="next-year">
+                  &gt;
+                </span>
+              </div>
               <select name="selection" id="selection">
                 <option value="calendar-body" selected>This Month</option>
-                <option value="week-calender">This Week</option>
-                <option value="day-calender">Today</option>
+                <option value="week-calendar">This Week</option>
+                <option value="day-calendar">Today</option>
               </select>
             </div>
             <div class="calendar-body details">
@@ -191,12 +199,12 @@
               </div>
               <div class="calendar-days"></div>
             </div>
-            <div class="week-calender details">
-              <table id="week-calender-table">
+            <div class="week-calendar details">
+              <table id="week-calendar-table">
               </table>
             </div>
-            <div class="day-calender details">
-              <table id="day-calender-table">
+            <div class="day-calendar details">
+              <table id="day-calendar-table">
               </table>
             </div>
             <div class="month-list"></div>
