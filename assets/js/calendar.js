@@ -150,15 +150,20 @@ $(window).on("load", function() {
   const calendar = document.querySelector(".calendar");
 
   const monthListElem = calendar.querySelector(".month-list");
+  const $monthListElem = $(monthListElem);
+  $monthListElem.hide();
 
   /** @type {HTMLDivElement} */
   const monthPickerElem = calendar.querySelector("#month-picker");
-  monthPickerElem.onclick = () => monthListElem.classList.add("show");
+  monthPickerElem.onclick = () => {
+    $monthListElem.show();
+    $monthListElem.addClass("show");
+  };
 
   /**
-   * @param {number} month
-   * @param {number} year
-   * @param {Task[]} tasks
+   * @param {number?} month
+   * @param {number?} year
+   * @param {Task[]?} tasks
    */
   const generateCalendar = (month = currMonth, year = currYear, tasks = []) => {
     /** @type {HTMLElement} */
@@ -168,7 +173,7 @@ $(window).on("load", function() {
       daysCount = daysOfMonth(year)[month],
       firstDay = new Date(year, month, 1).getDay();
 
-    calDaysElem.innerText = "";
+    calDaysElem.innerText = ""; // TODO: clear
     monthPickerElem.innerText = MONTHS[month];
     calYearElem.innerText = year.toString();
 
@@ -179,34 +184,49 @@ $(window).on("load", function() {
       if (i < firstDay) continue;
 
       const date = i + 1 - firstDay;
-      dayDiv.innerHTML = /*html*/ `<a dd="DD">${date}</a>`;
+      const dropupToggleElem = document.createElement("div");
+      dayDiv.appendChild(dropupToggleElem);
+
+      dropupToggleElem.innerText = date.toString();
 
       if (date === currDayOfMonth && year === currYear && month === currMonth)
         dayDiv.classList.add("curr-date");
-      else
-        for (const task of tasks)
-          if (
-            date === task.date &&
-            year === task.year &&
-            month === task.month - 1
-          ) {
-            dayDiv.classList.add("dropup");
-            dayDiv.classList.add("imp-date");
-            dayDiv.innerHTML = dayDiv.innerHTML.replace(
-              'dd="DD"',
-              'data-toggle="dropdown"'
-            );
-          }
 
       for (const task of tasks)
         if (date == task.date && year == task.year && month == task.month - 1) {
-          dayDiv.innerHTML += /*html*/ `
-            <p class="dropdown-menu p-2">
-              Tasks<br/>${task.message}
-            </p>
+          /** @type {HTMLParagraphElement} */
+          let dropupMenuElem;
+          if (dayDiv.lastElementChild !== dropupToggleElem) {
+            dropupMenuElem =
+              /** @type {HTMLParagraphElement} */ (dayDiv.lastElementChild);
+          } else {
+            dayDiv.classList.add("dropup", "imp-date");
+            dropupToggleElem.classList.add(
+              "align-items-center",
+              "d-flex",
+              "h-100",
+              "justify-content-center",
+              "w-100"
+            );
+            dropupToggleElem.setAttribute("data-toggle", "dropdown");
+            dropupToggleElem.addEventListener("click", task.setClickListener);
+            // dropupToggleElem.onclick = task.setClickListener;
+
+            dropupMenuElem = document.createElement("div");
+            dayDiv.appendChild(dropupMenuElem);
+
+            dropupMenuElem.innerHTML = /*html*/ `<h5>Tasks</h5><hr class="border-primary"/>`;
+            dropupMenuElem.classList.add(
+              "dropdown-menu",
+              "p-3",
+              "border-0",
+              "shadow"
+            );
+          }
+
+          dropupMenuElem.innerHTML += /*html*/ `
+            <h6>${task.message} <a href="/" class="text-blue">Class Link</a></h6>
           `;
-          // TODO: add support for multiple using node
-          dayDiv.onclick = task.setClickListener;
         }
     }
   };
@@ -220,7 +240,8 @@ $(window).on("load", function() {
 
     monthElem.innerHTML = /*html*/ `<div data-month="${index}">${month}</div>`;
     monthElem.querySelector("div").onclick = () => {
-      monthListElem.classList.remove("show");
+      $monthListElem.removeClass("show");
+      $monthListElem.hide();
       pickedMonth = index;
       generateCalendar(index, pickedYear, tasks);
     };
