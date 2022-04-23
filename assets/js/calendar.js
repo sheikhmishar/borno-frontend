@@ -19,11 +19,9 @@ const isLeapYear = (/** @type {number} */ year) =>
   (year % 4 === 0 && year % 100 !== 0 && year % 400 !== 0) ||
   (year % 100 === 0 && year % 400 === 0);
 
-const getFebDays = (/** @type {number} */ year) => (isLeapYear(year) ? 29 : 28);
-
 const daysOfMonth = (/** @type {number} */ year) => [
   31,
-  getFebDays(year),
+  isLeapYear(year) ? 29 : 28,
   31,
   30,
   31,
@@ -49,17 +47,48 @@ const currDate = new Date(),
  *    month: number,
  *    date: number,
  *    message: string,
+ *    hour: number,
  *    setClickListener: () => void
  * }} Task
  *  */
 /** @type {Task[]} */
 const tasks = [
   {
-    year: 2022,
-    month: 4,
-    date: 10,
-    message: "whatever",
-    // TODO: multiple tasks in one day
+    year: currYear,
+    month: currMonth + 1,
+    date: currDayOfMonth,
+    message: "English",
+    hour: 11,
+    setClickListener() {
+      console.log("clicked", this);
+    }
+  },
+  {
+    year: currYear,
+    month: currMonth + 1,
+    date: currDayOfMonth,
+    message: "History",
+    hour: 11,
+    setClickListener() {
+      console.log("clicked", this);
+    }
+  },
+  {
+    year: currYear,
+    month: currMonth + 1,
+    date: currDayOfMonth,
+    message: "Math",
+    hour: 17,
+    setClickListener() {
+      console.log("clicked", this);
+    }
+  },
+  {
+    year: currYear,
+    month: currMonth + 2,
+    date: 2,
+    message: "Speaking",
+    hour: 17,
     setClickListener() {
       console.log("clicked", this);
     }
@@ -68,6 +97,7 @@ const tasks = [
     year: 2022,
     month: 4,
     date: 15,
+    hour: 3,
     message: "study",
     setClickListener: function() {
       console.log("clicked 2", this);
@@ -77,6 +107,7 @@ const tasks = [
     year: 2022,
     month: 3,
     date: 15,
+    hour: 6,
     message: "march",
     setClickListener: () => {
       console.log("clicked 5");
@@ -86,9 +117,30 @@ const tasks = [
     year: 2022,
     month: 4,
     date: 26,
-    message: "New Kaaaaj",
+    hour: 11,
+    message: "2022 4 26 11 Task",
     setClickListener: function() {
-      console.log("clicked 3");
+      console.log("2022 5 5 11 Task", this);
+    }
+  },
+  {
+    year: 2022,
+    month: 4,
+    date: 29,
+    hour: 11,
+    message: "2022 4 29 11 Task",
+    setClickListener: function() {
+      console.log("2022 4 29 11 Task", this);
+    }
+  },
+  {
+    year: 2022,
+    month: 5,
+    date: 5,
+    hour: 11,
+    message: "2022 5 5 11 Task",
+    setClickListener: function() {
+      console.log("2022 5 5 11 Task", this);
     }
   }
 ];
@@ -113,14 +165,14 @@ $(window).on("load", function() {
     const calDaysElem = calendar.querySelector(".calendar-days"),
       /** @type {HTMLElement} */
       calYearElem = calendar.querySelector("#cal-year"),
-      daysCount = daysOfMonth(year),
+      daysCount = daysOfMonth(year)[month],
       firstDay = new Date(year, month, 1).getDay();
 
     calDaysElem.innerText = "";
     monthPickerElem.innerText = MONTHS[month];
     calYearElem.innerText = year.toString();
 
-    for (let i = 0; i < daysCount[month] + firstDay; i++) {
+    for (let i = 0; i < daysCount + firstDay; i++) {
       const dayDiv = document.createElement("div");
       calDaysElem.appendChild(dayDiv);
 
@@ -153,6 +205,7 @@ $(window).on("load", function() {
               Tasks<br/>${task.message}
             </p>
           `;
+          // TODO: add support for multiple using node
           dayDiv.onclick = task.setClickListener;
         }
     }
@@ -184,6 +237,34 @@ $(window).on("load", function() {
 
   const weekCalendarTable = document.getElementById("week-calendar-table");
   if (weekCalendarTable) {
+    const thisWeeksTasks = tasks.filter(task => {
+      if (
+        task.year === currYear &&
+        task.month - 1 === currMonth &&
+        task.date === currDayOfMonth
+      )
+        return task;
+      if (
+        task.year === currYear &&
+        task.month - 1 === currMonth &&
+        task.date > currDayOfMonth &&
+        task.date < currDayOfMonth + 7
+      )
+        return task;
+      if (
+        task.year === currYear &&
+        task.month - 1 === currMonth + 1 &&
+        task.date < (currMonthDayCount + currDayOfMonth + 7) % currMonthDayCount
+      )
+        return task;
+      if (
+        task.year === currYear + 1 &&
+        task.month - 1 === 0 &&
+        task.date < (currMonthDayCount + currDayOfMonth + 7) % currMonthDayCount
+      )
+        return task;
+    });
+
     /** @type {HTMLTableRowElement} */
     let weekDayNameRowElem,
       date = currDayOfMonth,
@@ -197,7 +278,7 @@ $(window).on("load", function() {
       const dayNameHeaderElem = document.createElement("th");
       weekDayNameRowElem.appendChild(dayNameHeaderElem);
 
-      if (date % currMonthDayCount == 0)
+      if (!(date % currMonthDayCount))
         dayNameHeaderElem.innerText = String(date);
       else dayNameHeaderElem.innerText = String(date % currMonthDayCount);
     }
@@ -226,15 +307,43 @@ $(window).on("load", function() {
       else if (hour < 12) dataElem.innerText = String(hour % 12).concat(" AM");
       else dataElem.innerText = String(hour % 12).concat(" PM");
 
-      for (let weekDay = 0; weekDay < 7; weekDay++) {
+      const thisWeeksTasksAtThisHour = thisWeeksTasks.filter(
+        thisWeeksTask => thisWeeksTask.hour === hour
+      );
+
+      for (let iday = 0, date = currDayOfMonth; iday < 7; iday++, date++) {
         dataElem = document.createElement("td");
         rowElem.appendChild(dataElem);
+
+        thisWeeksTasksAtThisHour
+          .filter(thisWeeksTask => thisWeeksTask.date === date)
+          .forEach(thisHoursTask => {
+            const pElem = document.createElement("span");
+            dataElem.appendChild(pElem);
+
+            const anchorElem = document.createElement("a");
+            dataElem.appendChild(anchorElem);
+            dataElem.appendChild(document.createElement("br"));
+
+            pElem.innerText = " " + thisHoursTask.message;
+            pElem.onclick = thisHoursTask.setClickListener;
+            pElem.style.cursor = "pointer";
+
+            anchorElem.setAttribute("href", "/courses.html");
+            anchorElem.classList.add("text-blue");
+            anchorElem.innerText = " Class Link";
+          });
       }
     }
   }
 
   const dayCalendarTable = document.getElementById("day-calendar-table");
-
+  const todaysTasks = tasks.filter(
+    task =>
+      task.date === currDayOfMonth &&
+      task.month - 1 === currMonth &&
+      task.year == currYear
+  );
   for (let hour = 0; dayCalendarTable && hour < 24; hour++) {
     const rowElem = document.createElement("tr");
     dayCalendarTable.appendChild(rowElem);
@@ -252,12 +361,34 @@ $(window).on("load", function() {
 
     dataElem = document.createElement("td");
     rowElem.appendChild(dataElem);
+
+    todaysTasks
+      .filter(todaysTask => todaysTask.hour === hour)
+      .forEach(thisHoursTask => {
+        const pElem = document.createElement("span");
+        dataElem.appendChild(pElem);
+
+        const anchorElem = document.createElement("a");
+        dataElem.appendChild(anchorElem);
+        dataElem.appendChild(document.createElement("br"));
+
+        pElem.innerText = " " + thisHoursTask.message;
+        pElem.onclick = thisHoursTask.setClickListener;
+        pElem.style.cursor = "pointer";
+
+        anchorElem.setAttribute("href", "/courses.html");
+        anchorElem.classList.add("text-blue");
+        anchorElem.innerText = " Class Link";
+      });
   }
 
-  $(".week-calendar").hide();
-  $(".day-calendar").hide();
-  $("#selection").change(function() {
+  $(".week-calendar,.day-calendar").hide();
+  $("#cal-selection").change(function() {
+    var val = $(this).val();
+    if (val === "month-calendar") $("#month-picker,.year-picker").show();
+    else $("#month-picker,.year-picker").hide();
+
     $(".details").hide();
-    $(String(".").concat($("#selection").val())).show();
+    $(String(".").concat(val)).show();
   });
 });

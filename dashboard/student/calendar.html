@@ -117,22 +117,24 @@
     </div>
   </section>
 
-  <section class="bg-dark border-bottom border-dark">
+  <section class="bg-dark">
     <div class="container">
-      <h6 class="text-center">calendar</h6>
-      <h2 class="text-center text-primary">Upcoming Classes & Assignments</h2>
+      <h6 class="text-center">Calendar</h6>
+      <h2 class="text-center text-primary">Upcoming <span class="text-blue">Classes</span> <span class="text-pink">&amp;
+          Assignments</span></h2>
 
-      <div class="row my-5">
-        <div class="bg-dark col-md-4 my-3 position-relative">
+      <div class="row mt-5">
+        <div id="cal-task" class="col-md-4 my-3 position-relative">
           <h5 class="text-center">
             Today's Tasks
           </h5>
           <br />
-          <a href="./" class="card bg-secondary shadow text-light" style="border-radius: 30px;">
+          <a href="./" class="card bg-secondary shadow text-light rounded border-0">
             <div class="card-body p-3">
               <div class="card-text d-flex justify-content-between">
                 <div>
-                  <h5>Course Name</h5>Teacher's Name
+                  <h5>English Expression</h5>
+                  <h5>Batch: #33</h5>Abreen Azeez
                 </div>
                 <div>
                   <h5>2:20 PM</h5>
@@ -140,11 +142,12 @@
               </div>
             </div>
           </a><br>
-          <a href="./" class="card bg-secondary shadow text-light" style="border-radius: 30px;">
+          <a href="./" class="card bg-secondary shadow text-light rounded border-0">
             <div class="card-body p-3">
               <div class="card-text d-flex justify-content-between">
                 <div>
-                  <h5>Course Name</h5>Teacher's Name
+                  <h5>English Expression</h5>
+                  <h5>Batch: #33</h5>Abreen Azeez
                 </div>
                 <div>
                   <h5>4:20 PM</h5>
@@ -152,7 +155,7 @@
               </div>
             </div>
           </a><br>
-          <a href="./" class="card bg-secondary shadow text-light" style="border-radius: 30px;">
+          <a href="./" class="card bg-secondary shadow text-light rounded border-0">
             <div class="card-body p-3">
               <div class="card-text d-flex justify-content-between">
                 <div>
@@ -163,12 +166,10 @@
                 </div>
               </div>
             </div>
-          </a><br>
-          <h6 class="text-center add-task"><a href="#">+ Add Task</a>
-          </h6>
+          </a>
         </div>
-        <div class="col-md-8 my-5">
-          <div class="calendar">
+        <div class="col-md-8 mt-5">
+          <div class="calendar shadow mt-3">
             <div class="calendar-header">
               <span class="month-picker" id="month-picker"></span>
               <div class="year-picker">
@@ -200,33 +201,125 @@
     </div>
   </section>
 
-  <section class="bg-secondary">
+  <section class="overflow-hidden position-relative">
+    <div class="bg-ball-secondary z-index-n1 rounded-circle position-absolute" style="height: 6rem; width: 6rem;">
+    </div>
+    <div class="bg-ball-secondary z-index-n1 rounded-circle position-absolute"
+      style="height: 10rem; width: 10rem; right: 50%; top: 3%;"></div>
+    <div class="bg-ball-secondary z-index-n1 rounded-circle position-absolute"
+      style="height: 10rem; width: 10rem; right: 60%; bottom: 3%;"></div>
+    <div class="bg-ball-secondary z-index-n1 rounded-circle position-absolute"
+      style="height: 10rem; width: 10rem; right: 3%; bottom: 9%;"></div>
     <div class="container">
-      <h2 class="text-center text-primary">My Courses</h2>
-      <div class="row my-5" style="padding: 10px;">
-        <div class="bg-dark col-md-5 col-lg-5 my-5 position-relative" style="border-radius: 30px; margin: 15px;">
-          <img src="/assets/img/banner.jpg" class="img-fluid" alt="Responsive image"
-            style="border-radius: 15px; margin-top: 15px; margin-bottom: 30px;">
-          <h2 class="text-reset">Strategic Social Media and Evolution of Visual</h2>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia nam impedit expedita error
-            ratione obcaecati nesciunt, sapiente eum pariatur itaque non sed harum!</p>
-          <a href="#" role="button" class="btn btn-primary rounded-pill shadow text-secondary font-size-unset"
-            style="margin-bottom: 15px;">
-            Continue
-          </a><br>
+      <h6 class="text-center">My Courses</h6>
+      <h2 class="text-center text-blue"><strong>Courses I have been enrolled</strong></h2>
+
+      <div class="row my-5 card-alternate">
+        <div class="col-md-6 col-lg-4 my-3 position-relative">
+          <div class="position-absolute" style="left: -100px; bottom: -100px;">
+            <img src="/assets/img/yellow-bg-blob-left.svg" alt="blob" class="img-fluid" style="height: 200px;" />
+          </div>
+          <div class="card border-0 shadow h-100">
+            <div class="card-img-top" style="height: 200px; background: #0f0f0f; border-radius: 1.25rem 1.25rem 0 0">
+            </div>
+            <div class="card-body">
+              <div class="card-title row">
+                <div class="col-6">
+                  <span class="card-text"><i class="fa fa-circle text-primary"></i> 5 Weeks</span>
+                </div>
+                <div class="col-6 d-flex justify-content-end">
+                  <span class="card-text"><span class="text-primary">৳</span> 5 Weeks</span>
+                </div>
+              </div>
+              <div class="text-center">
+                <h5 class="card-title text-primary">
+                  <strong>English Expression Course</strong>
+                </h5>
+                <p class="card-text">
+                  10 Live Online Classes 5 In-Person. <br />
+                  WorkShops 5 Exams
+                </p>
+                <div class="mb-2">
+                  <a href="/course-details.html" class="card-link text-primary">
+                    Show Details
+                  </a>
+                </div>
+                <a href="/course-join.html" class="btn btn-primary rounded-pill text-secondary shadow">
+                  Join Now <i class="fa fa-plus"></i>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="col-md-1 col-lg-1 my-1">
+        <div class="col-md-6 col-lg-4 my-3">
+          <div class="card border-0 shadow h-100">
+            <div class="card-img-top" style="height: 200px; background: #0f0f0f; border-radius: 1.25rem 1.25rem 0 0">
+            </div>
+            <div class="card-body">
+              <div class="card-title row">
+                <div class="col-6">
+                  <span class="card-text"><i class="fa fa-circle text-primary"></i> 5 Weeks</span>
+                </div>
+                <div class="col-6 d-flex justify-content-end">
+                  <span class="card-text"><span class="text-primary">৳</span> 5 Weeks</span>
+                </div>
+              </div>
+              <div class="text-center">
+                <h5 class="card-title text-primary">
+                  <strong>English Expression Course</strong>
+                </h5>
+                <p class="card-text">
+                  10 Live Online Classes 5 In-Person. <br />
+                  WorkShops 5 Exams
+                </p>
+                <div class="mb-2">
+                  <a href="/course-details.html" class="card-link text-primary">
+                    Show Details
+                  </a>
+                </div>
+                <a href="/course-join.html" class="btn btn-primary rounded-pill text-secondary shadow">
+                  Join Now <i class="fa fa-plus"></i>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="bg-dark col-md-5 col-lg-5 my-5 position-relative" style="border-radius: 30px; margin:15px;">
-          <img src="/assets/img/banner.jpg" class="img-fluid" alt="Responsive image"
-            style="border-radius: 15px; margin-top: 15px; margin-bottom: 30px;">
-          <h2 class="text-reset">Strategic Social Media and Evolution of Visual</h2>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia nam impedit expedita error
-            ratione obcaecati nesciunt, sapiente eum pariatur itaque non sed harum!</p>
-          <a href="#" role="button" class="btn btn-primary rounded-pill shadow text-secondary font-size-unset"
-            style="margin-bottom: 15px;">
-            Continue
-          </a><br>
+        <div class="col-md-6 col-lg-4 my-3 position-relative">
+          <div class="position-absolute z-index-n1" style="right: -100px; top: -100px;">
+            <img src="/assets/img/yellow-bg-blob-left.svg" alt="blob" class="img-fluid fa-rotate-180"
+              style="height: 200px;" />
+          </div>
+          <div class="card border-0 shadow h-100">
+            <div class="card-img-top" style="height: 200px; background: #0f0f0f; border-radius: 1.25rem 1.25rem 0 0">
+            </div>
+            <div class="card-body">
+              <div class="card-title row">
+                <div class="col-6">
+                  <span class="card-text"><i class="fa fa-circle text-primary"></i> 5 Weeks</span>
+                </div>
+                <div class="col-6 d-flex justify-content-end">
+                  <span class="card-text"><span class="text-primary">৳</span> 5 Weeks</span>
+                </div>
+              </div>
+              <div class="text-center">
+                <h5 class="card-title text-primary">
+                  <strong>English Expression Course</strong>
+                </h5>
+                <p class="card-text">
+                  10 Live Online Classes 5 In-Person. <br />
+                  WorkShops 5 Exams
+                </p>
+                <div class="mb-2">
+                  <a href="/course-details.html" class="card-link text-primary">
+                    Show Details
+                  </a>
+                </div>
+                <a href="/course-join.html" class="btn btn-primary rounded-pill text-secondary shadow">
+                  Join Now <i class="fa fa-plus"></i>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
