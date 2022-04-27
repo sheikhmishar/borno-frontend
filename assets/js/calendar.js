@@ -173,7 +173,9 @@ $(window).on("load", function() {
       daysCount = daysOfMonth(year)[month],
       firstDay = new Date(year, month, 1).getDay();
 
-    calDaysElem.innerText = ""; // TODO: clear
+    while (calDaysElem.firstChild)
+      calDaysElem.removeChild(calDaysElem.firstChild);
+
     monthPickerElem.innerText = MONTHS[month];
     calYearElem.innerText = year.toString();
 
@@ -196,10 +198,10 @@ $(window).on("load", function() {
         if (date == task.date && year == task.year && month == task.month - 1) {
           /** @type {HTMLParagraphElement} */
           let dropupMenuElem;
-          if (dayDiv.lastElementChild !== dropupToggleElem) {
+          if (dayDiv.lastElementChild !== dropupToggleElem)
             dropupMenuElem =
               /** @type {HTMLParagraphElement} */ (dayDiv.lastElementChild);
-          } else {
+          else {
             dayDiv.classList.add("dropup", "imp-date");
             dropupToggleElem.classList.add(
               "align-items-center",
@@ -325,7 +327,7 @@ $(window).on("load", function() {
 
       if (hour === 0) dataElem.innerText = "12 AM";
       else if (hour === 12) dataElem.innerText = "12 PM";
-      else if (hour < 12) dataElem.innerText = String(hour % 12).concat(" AM");
+      else if (hour < 12) dataElem.innerText = String(hour).concat(" AM");
       else dataElem.innerText = String(hour % 12).concat(" PM");
 
       const thisWeeksTasksAtThisHour = thisWeeksTasks.filter(

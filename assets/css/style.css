@@ -352,6 +352,26 @@ a.nav-link.text-light.btn:focus {
   border-radius: var(--border-radius) !important;
 }
 
+.rounded-top {
+  border-top-left-radius: var(--border-radius) !important;
+  border-top-right-radius: var(--border-radius) !important;
+}
+
+.rounded-right {
+  border-top-right-radius: var(--border-radius) !important;
+  border-bottom-right-radius: var(--border-radius) !important;
+}
+
+.rounded-bottom {
+  border-bottom-right-radius: var(--border-radius) !important;
+  border-bottom-left-radius: var(--border-radius) !important;
+}
+
+.rounded-left {
+  border-top-left-radius: var(--border-radius) !important;
+  border-bottom-left-radius: var(--border-radius) !important;
+}
+
 .theme-light .card {
   background: var(--color-text-secondary);
 }
